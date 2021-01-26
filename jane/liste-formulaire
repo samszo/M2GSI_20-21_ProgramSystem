@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Listes des formulaires</title>
+  </head>
+  <body>
+<h1> Listes des formulaires etudiants </h1>
+<ul id='listeDesEtudiants'>
+
+   <li>etudiant 1 Aissatou-Cis </li>
+   <li>etudiant 2 Alexia971 </li>
+   <li>etudiant 3 COCO94-b <li>
+   <li>etudiant 4 KalelGuerni <li>
+   <li>etudiant 5 M639148<li>
+   <li>etudiant 6 Noralli<li>
+   <li>etudiant 7 YasmineNouar<li>
+   <li>etudiant 8 babelhead<li>
+   <li>etudiant 9 coumba999<li>
+   <li>etudiant 10 diasek</li>
+   <li>etudiant 11 ibrahima15</li>
+   <li>etudiant 12 jane</li>
+   <li>etudiant 13 samb1212</li>
+   <li>etudiant 14 sndong-git</li>
+   
+    </ul>
+   <script>
+      console.log("DEBUT");
+	  
+	   let listeEtudiants=[
+	   
+	   console.log(listeEtudiants);
+	   
+	   {'nom':'titi',"github":'Aissatou-Cis','besoins':['html','javascript']}
+	   {'nom':'tata','github':'tat','besoin':['html','css']}
+	   {'nom':'toto','github':'totoot'}	   
+	    {'nom':'machin truc chouette','github':'totoot'}	
+	   ];
+	  
+	   console.log(listeEtudiants);
+	   
+	    listeEtudiants.forEach(d=>{
+		console.log(d);
+		
+		ajoutLi(d.nom+' ('d.github+')'),'listeEtudiants');
+		
+				function ajoutLi(txtLi),(idlisteDesEtudiants) {
+		var ul = document.getElementbyId("listeDesEtudiants");
+		var liEtudiants = document.createElement("li");
+		var liEtudiants = document.createElement("li");
+		appendChild(document.createTextNode("liTxt"));
+		liEtudiants.appendChild(liTxt);
+		
+		if (d.besoin){
+		d.besoins.forEach(b=>{
+		ajoutLi('besoin 1','listeBesoins');
+		  });
+		
+		}
+		function ajoutLi(txtLi),(idlisteDesEtudiants) {
+		var ul = document.getElementbyId("listeDesEtudiants");
+		var liBesoin = document.createElement("li");
+		var besoinTxt = document.createTextNode(b);
+		appendChild(document.createTextNode("liTxt"));
+		liEtudiants.appendChild(liTxt);
+		ul.appendChild(liEtudiants);
+		}
+		ajoutLi('listeBesoins')
+
+	  console.log('FIN');
+   </script>
+  
+  </body>
+</html>
