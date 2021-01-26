@@ -9,8 +9,6 @@
 
     <h1>Liste des formulaires étudiants</h1>
     <ul id='listeEtu' >
-      <li>étudiant 1 Aissatou-Cis</li>
-      <li>étudiant 2  Jane Saint-fleur https://samszo.github.io/M2GSI_20-21_ProgramSystem/Alexia971/formulaire.html</li>
     </ul> 
     
     
@@ -21,24 +19,25 @@
             {'nom':'titi',"github":'Aissatou-Cis','besoins':['html','javascript']}
             ,{'nom':'tata','github':'tat','besoins':['html','css']}
             ,{'nom':'toto','github':'totoot'}
+            ,{'nom':'Machin truc chouette','github':'totoot'}
         ];
         //écrire la liste dans la console
         console.log(listeEtudiants);
 
         //boucler sur les élément de la liste
         listeEtudiants.forEach(d=>{
-            console.log(d);
+            //console.log(d);
+            ajoutLi(d.nom);
         });
 
 
-    function ajoutLi() {
+    function ajoutLi(txtLi) {
         var ul = document.getElementById("listeEtu");
         var liEtu = document.createElement("li");
-        liEtu.appendChild(document.createTextNode("Four"));
+        var liTxt = document.createTextNode(txtLi);
+        liEtu.appendChild(liTxt);
         ul.appendChild(liEtu);
     }
-
-    ajoutLi();
 
     console.log('FIN');
     </script>
