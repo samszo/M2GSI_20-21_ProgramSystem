@@ -5,24 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des formulaires</title>
 </head>
-<body>    
+<body>  
+
     <h1>Liste des formulaires étudiants</h1>
-    <ul>
+    <ul id='listeEtu' >
       <li>étudiant 1 Aissatou-Cis</li>
       <li>étudiant 2  Jane Saint-fleur https://samszo.github.io/M2GSI_20-21_ProgramSystem/Alexia971/formulaire.html</li>
-    </ul>    
+    </ul> 
+    
+    
     <script>
-        console.log('DEBUT');
-
+        console.log("DEBUT");
+        //création de la liste des étudiants
         let listeEtudiants=[
-            {'nom':'titi','github':'Aissatou-Cis'}
-            ,{'nom':'tata','github':'tat'}
+            {'nom':'titi',"github":'Aissatou-Cis','besoins':['html','javascript']}
+            ,{'nom':'tata','github':'tat','besoins':['html','css']}
             ,{'nom':'toto','github':'totoot'}
         ];
+        //écrire la liste dans la console
         console.log(listeEtudiants);
 
+        //boucler sur les élément de la liste
+        listeEtudiants.forEach(d=>{
+            console.log(d);
+        });
 
-        console.log('FIN');
+
+    function ajoutLi() {
+        var ul = document.getElementById("listeEtu");
+        var liEtu = document.createElement("li");
+        liEtu.appendChild(document.createTextNode("Four"));
+        ul.appendChild(liEtu);
+    }
+
+    ajoutLi();
+
+    console.log('FIN');
     </script>
 </body>
 </html>
