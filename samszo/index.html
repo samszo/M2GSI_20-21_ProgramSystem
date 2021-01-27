@@ -6,44 +6,7 @@
     <title>Liste des formulaires</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
 
-    <style>
-        table,
-        td {
-            border: 1px solid #333;
-            vertical-align: top;
-        }
-
-        thead,
-        tfoot {
-            background-color: #333;
-            color: #fff;
-        }
-
-        h2 {
-            color: white;
-            text-align: center;
-        }
-        li {
-            color: rgb(164, 129, 129);
-        }
-        .form {
-            color: rgb(18, 201, 49);
-        }
-        .reponse {
-            color: rgb(236, 139, 12);
-        }
-        #frmForm {
-            background-color: rgb(30, 126, 190);
-            height: 600px;
-            width: 600px;
-        }
-        #frmRep {
-            background-color: rgb(101, 86, 187);
-            height: 600px;
-            width: 600px;
-        }
-
-    </style>
+    <link href="style.css" rel="stylesheet">
 
 </head>
 <body>  
@@ -67,10 +30,21 @@
                     </ul>                            
                 </td>
                 <td>
-                    <div id='frmForm'>coucou</div>
+                    <div id='frmForm' class='ifr'>
+                        <iframe class='ifr' id="ifrmForm"
+                            title="Le formulaire"
+                            src="https://samszo.github.io/M2GSI_20-21_ProgramSystem/"
+                        >
+                        </iframe>
+                    </div>
                 </td>
                 <td>
-                    <div id='frmRep'>tata</div>
+                    <div id='frmRep' class='ifr'><iframe class='ifr'  id="ifrmRep"
+                        title="Les réponses"
+                        src="https://samszo.github.io/M2GSI_20-21_ProgramSystem/"
+                        >
+                    </iframe>
+                </div>
                 </td>
             </tr>        
         </tbody>
@@ -124,11 +98,24 @@
         var ulLien = document.createElement("ul");
         var liLien = document.createElement("li");
         var urlLien = "https://samszo.github.io/M2GSI_20-21_ProgramSystem/"+d['Votre compte GitHub'];
-        liLien.innerHTML = '<a href="'+urlLien+'/formulaire.html'+'" class="form" >lien vers le formulaire</a>';
+        liLien.innerHTML = '<a target="_blank" href="'+urlLien+'/formulaire.html'+'" class="form" >lien vers le formulaire</a>';
         ulLien.appendChild(liLien);
         liLien = document.createElement("li");
-        liLien.innerHTML = '<a href="'+urlLien+'/liste-formulaire.html'+'" class="reponse" >lien vers les réponses</a>';
+        liLien.innerHTML = '<a target="_blank" href="'+urlLien+'/liste-formulaire.html'+'" class="reponse" >lien vers les réponses</a>';
         ulLien.appendChild(liLien);
+
+        //ajjoute un bouton de visualisation des pages
+        var btnAfficheIframe = document.createElement("button");
+        btnAfficheIframe.setAttribute("class", "favorite styled");
+        btnAfficheIframe.setAttribute("type", "button");
+        btnAfficheIframe.innerHTML = 'Affiche les pages';
+        btnAfficheIframe.addEventListener("click", function(e) {
+            affichePage(d);
+        });
+        ulLien.appendChild(btnAfficheIframe);
+
+
+        //ajoute la liste à l'itme de l'atudiant
         liEtu.appendChild(ulLien);            
 
         /*afficher toute les propriété d'un objet
@@ -145,6 +132,11 @@
     }
 
     console.log('FIN');
+
+    function affichePage(d){
+        console.log(d);
+    }
+
     </script>
 </body>
 </html>
