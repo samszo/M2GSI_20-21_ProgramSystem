@@ -41,7 +41,8 @@
         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQHni5Lu--I9WKTWGHOJ3_SBRW47sPTvxxRN6FOaGchhMztr4gm3I5C91EJq1CcGOsmfsOfa2f7PfrF/pub?gid=1651539069&single=true&output=csv" ;
         //urlCSV = "notesM2GSI.csv";
         urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSaWoUFxRlyerPuoZyrJCB-lEH_eUNdS3B2dTsS4BBmsFCHHnWVbxFsg7G-cUu1bRXdRCNE99k7oYdd/pub?gid=1053061645&single=true&output=csv";
-        d3.csv(urlCSV).then(function(data) {
+        d3.csv(urlCSV).then(function(data) /* récupérer la liste CSV */ 
+                            {
             console.log("csv récupéré");
             console.log(data);
             data.forEach(d=>{
@@ -56,7 +57,7 @@
     function ajoutLi(d, idListe) {
         var ul = document.getElementById(idListe);
         var liEtu = document.createElement("li");
-        var liTxt = document.createTextNode(d['Votre prénom']+' '+d['Votre nom']+' ('+d['Votre compte GitHub']+')');
+        var liTxt = document.createTextNode(d['Votre nom']+' '+d['Votre prénom']+' ('+d['Est-ce vraiment la question?']+' '+d["Est-ce qu'on trouvera la réponse?"]+' '+d['Est-ce nécessaire de savoir?']+' '+d["Y a-t-il d'autres questions?"]+');
         liEtu.appendChild(liTxt);
 
         if(d.besoins){
