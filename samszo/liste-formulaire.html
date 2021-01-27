@@ -56,7 +56,8 @@
     function ajoutLi(d, idListe) {
         var ul = document.getElementById(idListe);
         var liEtu = document.createElement("li");
-        var liTxt = document.createTextNode(d['Votre prénom']+' '+d['Votre nom']+' ('+d['Votre compte GitHub']+')');
+        //var liTxt = document.createTextNode(d['Votre prénom']+' '+d['Votre nom']+' ('+d['Votre compte GitHub']+')');
+        var liTxt = document.createTextNode(d['URL vers la cartographie ?']+' = '+d['Qualité esthétique de la cartographie ?']);
         liEtu.appendChild(liTxt);
 
         if(d.besoins){
