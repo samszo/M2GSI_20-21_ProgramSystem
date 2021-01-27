@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>  
+
+    <h1>Liste des formulaires étudiants</h1>
+    <ul id='listeEtu' >
+
+    <ul id="listeEtu">
+    </ul>
+
+    <ul id='listeBesoins' >
+    </ul> 
+
+
+@@ -27,15 +31,26 @@ <h1>Liste des formulaires étudiants</h1>
+        //boucler sur les élément de la liste
+        listeEtudiants.forEach(d=>{
+            //console.log(d);
+            ajoutLi(d.nom);
+            ajoutLi(d,'listeEtu');
+        });
+
+
+    function ajoutLi(txtLi) {
+        var ul = document.getElementById("listeEtu");
+    function ajoutLi(d, idListe) {
+        var ul = document.getElementById(idListe);
+        var liEtu = document.createElement("li");
+        var liTxt = document.createTextNode(txtLi);
+        var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
+        liEtu.appendChild(liTxt);
+
+        if(d.besoins){
+            var ulBesoin = document.createElement("ul");
+            d.besoins.forEach(b=>{
+                var liBesoin = document.createElement("li");
+                var besoinTxt = document.createTextNode(b);
+                liBesoin.appendChild(besoinTxt);
+                ulBesoin.appendChild(liBesoin);
+            })
+            liEtu.appendChild(ulBesoin);            
+        }
+
+        ul.appendChild(liEtu);
+    }
+    </body>
+    </html>
