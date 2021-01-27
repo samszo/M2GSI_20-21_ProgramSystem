@@ -29,16 +29,33 @@
         //écrire la liste dans la console
         console.log(listeEtudiants);
 
-        //boucler sur les élément de la liste
+        /*boucler sur les élément de la liste
         listeEtudiants.forEach(d=>{
             //console.log(d);
             ajoutLi(d,'listeEtu');
         });
+        */
+
+
+        console.log("récupère le csv");
+        let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQHni5Lu--I9WKTWGHOJ3_SBRW47sPTvxxRN6FOaGchhMztr4gm3I5C91EJq1CcGOsmfsOfa2f7PfrF/pub?gid=1651539069&single=true&output=csv" ;
+        //urlCSV = "notesM2GSI.csv";
+        d3.csv(urlCSV).then(function(data) {
+            console.log("csv récupéré");
+            console.log(data);
+            data.forEach(d=>{
+                //console.log(d);
+                ajoutLi(d,'listeEtu');
+            });
+
+        });
+        console.log("Fait autre chose");
+
 
     function ajoutLi(d, idListe) {
         var ul = document.getElementById(idListe);
         var liEtu = document.createElement("li");
-        var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
+        var liTxt = document.createTextNode(d['Votre prénom']+' '+d['Votre nom']+' ('+d['Votre compte GitHub']+')');
         liEtu.appendChild(liTxt);
 
         if(d.besoins){
