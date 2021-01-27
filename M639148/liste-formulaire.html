@@ -55,7 +55,7 @@
     function ajoutLi(d, idListe) {
         var ul = document.getElementById(idListe);
         var liEtu = document.createElement("li");
-        var liTxt = document.createTextNode(d['Votre nom']+' '+d['2. Quelles sources d'information privilégiez-vous  ?']+' ('+d['5. Vous arrive-t-il de regarder des documentaires ?']+')');
+        var liTxt = document.createTextNode(d['Votre nom']+' '+d["2. Quelles sources d'information privilégiez-vous  ?"]+' ('+d['5. Vous arrive-t-il de regarder des documentaires ?']+')');
         liEtu.appendChild(liTxt);
 
         if(d.besoins){
