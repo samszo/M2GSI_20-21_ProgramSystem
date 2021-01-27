@@ -39,7 +39,7 @@
 
         console.log("récupère le csv");
         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSbGX1vOQZOE0qn60N1EvoZpB7yyN9yT47fLs3uswhI9fth3cMJAF3DZ6M2Hh2x7gO46VVn2XDqcw8Z/pub?output=csv" ;
-        //urlCSV = "Réponses Pratiques informationnelles (réponses).csv";
+        //urlCSV = "Réponses Pratiques informationnelles.csv";
         d3.csv(urlCSV).then(function(data) {
             console.log("csv récupéré");
             console.log(data);
