@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des formulaires</title>
+</head>
+<body>  
+
+    <h1>Liste des formulaires étudiants</h1>
+
+    <ul id="listeEtu">
+    </ul>
+
+    <ul id='listeBesoins' >
+    </ul> 
+    
+    
+    <script>
+        console.log("DEBUT");
+        //création de la liste des étudiants
+        let listeEtudiants=[
+            {'nom':'titi',"github":'Aissatou-Cis','besoins':['html','javascript']}
+            ,{'nom':'tata','github':'tat','besoins':['html','css']}
+            ,{'nom':'toto','github':'totoot'}
+            ,{'nom':'Machin truc chouette','github':'totoot'}
+        ];
+        //écrire la liste dans la console
+        console.log(listeEtudiants);
+
+        //boucler sur les élément de la liste
+        listeEtudiants.forEach(d=>{
+            //console.log(d);
+            ajoutLi(d,'listeEtu');
+        });
+
+    function ajoutLi(d, idListe) {
+        var ul = document.getElementById(idListe);
+        var liEtu = document.createElement("li");
+        var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
+        liEtu.appendChild(liTxt);
+
+        if(d.besoins){
+            var ulBesoin = document.createElement("ul");
+            d.besoins.forEach(b=>{
+                var liBesoin = document.createElement("li");
+                var besoinTxt = document.createTextNode(b);
+                liBesoin.appendChild(besoinTxt);
+                ulBesoin.appendChild(liBesoin);
+            })
+            liEtu.appendChild(ulBesoin);            
+        }
+
+        ul.appendChild(liEtu);
+    }
+
+    console.log('FIN');
+    </script>
+</body>
+</html>
