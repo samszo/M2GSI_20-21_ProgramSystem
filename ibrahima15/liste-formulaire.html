@@ -7,14 +7,82 @@
     < script  src = " https://d3js.org/d3.v6.min.js " > </ script >
 
 </ tête >
-< corps >
-
+< corps >  
+    
 
     < h1 > Liste des étudiants </ h1 >
     < ul  id = " listeEtu " >
     </ ul >
+    
+    
+    < script >
+        console . log ( "DEBUT" ) ;
+        // création de la liste des étudiants
+        laissez  listeEtudiants = [
+            { 'nom' : 'titi' , "github" : 'Aissatou-Cis' , 'besoins' : [ 'html' , 'javascript' ] }
+            , { 'nom' : 'tata' , 'github' : 'tat' , 'besoins' : [ 'html' , 'css' ] }
+            , { 'nom' : 'toto' , 'github' : 'totoot' }
+            , { 'nom' : 'Machin truc chouette' , 'github' : 'totoot' }
+        ] ;
+        // écrire la liste dans la console
+        console . log ( listeEtudiants ) ;
 
-<script>
+        / * boucler sur les élément de la liste
+        listeEtudiants.forEach (d => {
+            //console.log(d);
+            ajoutLi (d, 'listeEtu');
+        });
+        * /
 
-</script>
-        console. log (DEBUT)
+
+        console . log ( "récupère le csv" ) ;
+        laisser  urlCSV  =  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQHni5Lu--I9WKTWGHOJ3_SBRW47sPTvxxRN6FOaGchhMztr4gm3I5C91EJq1CcGOsmfsOfa2f7PfrF/pub?gid=1651539069&single=true&output=csv"  ;
+        // urlCSV = "notesM2GSI.csv";
+        // urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQgaDT2x-KZ20bSSrrnHlnGKrUa5OKs25322kfizkaSXx6hUCQ4qXylp7DQk_N0Sqirp=treadsheets14"
+        d3 . csv ( urlCSV ) . alors ( fonction ( données )  {
+            console . log ( "csvéré" ) ;
+            console . log ( données ) ;
+            données . forEach ( d => {
+                //console.log(d);
+                ajoutLi ( d , 'listeEtu' ) ;
+            } ) ;
+
+        } ) ;
+        console . log ( "Fait autre chose" ) ;
+
+
+    function  ajoutLi ( d ,  idListe )  {
+        var  ul  =  document . getElementById ( idListe ) ;
+        var  liEtu  =  document . createElement ( "li" ) ;
+        var  liTxt  =  document . createTextNode ( d [ 'Votre prénom' ] + '' + d [ 'Votre nom' ] + '(' + d [ 'Votre compte GitHub' ] + ')' ) ;
+        // var liTxt = document.createTextNode (d ['URL vers la cartographie?'] + '=' + d ['Qualité esthétique de la cartographie?']);
+        liEtu . appendChild ( liTxt ) ;
+
+        // afficher les lien vers le formulaire et la liste des réponses
+        var  ulLien  =  document . createElement ( "ul" ) ;
+        var  liLien  =  document . createElement ( "li" ) ;
+        var  urlLien  =  "https://samszo.github.io/M2GSI_20-21_ProgramSystem/" + d [ 'Votre compte GitHub' ] ;
+        liLien . innerHTML  =  '<a href="' + urlLien +'/formulaire.html' +'"> privilège vers le formulaire </a>' ;
+        ulLien . appendChild ( liLien ) ;
+        liLien  =  document . createElement ( "li" ) ;
+        liLien . innerHTML  =  '<a href="' + urlLien +'/liste-formulaire.html' +'"> link to les Réponses </a>' ;
+        ulLien . appendChild ( liLien ) ;
+        liEtu . appendChild ( ulLien ) ;            
+
+        / * afficher toute la propriété d'un objet
+        var ulProp = document.createElement ("ul");
+        for (propriété const en d) {
+            var liProp = document.createElement ("li");
+            var PropTxt = document.createTextNode (d [propriété]);
+            liProp.appendChild (PropTxt);
+            ulProp.appendChild (liProp);
+        }
+        liEtu.appendChild (ulProp);            
+        * /
+        ul . appendChild ( liEtu ) ;
+    }
+
+    console . log ( 'FIN' ) ;
+    </ script >
+</ corps >
+</ html >
