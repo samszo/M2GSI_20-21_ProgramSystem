@@ -39,7 +39,7 @@
 
         console.log("récupère le csv");
         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTlzShq-zEcdLIwJx1Us9OI-K6EwNyjyMbb91E0HETnakFh4zghG0BuLOL0BVWvhRWs3eGBCLz1cgp/pub?output=csv" ;
-        //urlCSV = "notesM2GSI.csv";
+        //urlCSV = "Evaluation de cartographie de controverse_Coumba Ndaw.csv";
         urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQgaDT2x-KZ20bSSrrnHlnGKrUa5OKs25322kfizkaSXx6hUCQ4qXylp7DQk_N0Sqirp6LkqGsDTIb0/pub?gid=638149350&single=true&output=csv";
         d3.csv(urlCSV).then(function(data) {
             console.log("csv récupéré");
@@ -56,7 +56,7 @@
     function ajoutLi(d, idListe) {
         var ul = document.getElementById(idListe);
         var liEtu = document.createElement("li");
-        var liTxt = document.createTextNode(d['Coumba']+'notation '+d['Ndaw']+' ('+d['coumba999']+')');
+        var liTxt = document.createTextNode(d['Notation']+''+d['Idées principales']+' ('+d['Apréciation personnelle']+')');
         liEtu.appendChild(liTxt);
 
         if(d.besoins){
