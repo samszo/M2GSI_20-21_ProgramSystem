@@ -1,0 +1,61 @@
+table,
+td {
+    bordure: 1px solide # 333;
+    alignement vertical: haut;
+}
+
+la tête,
+tfoot {
+    couleur d'arrière-plan: # 333;
+    couleur: #fff;
+}
+
+h2 {
+    Couleur blanche;
+    text-align: centre;
+}
+li {
+    couleur: rgb (164, 129, 129);
+}
+.forme {
+    couleur: rgb (18, 201, 49);
+}
+.reponse {
+    couleur: rgb (236, 139, 12);
+}
+#frmForm {
+    couleur d'arrière-plan: rgb (30, 126, 190);
+}
+#frmRep {
+    couleur de fond: rgb (101, 86, 187);
+}
+.ifr {
+    hauteur: 600px;
+    largeur: 600px;
+}
+.styled {
+    bordure: 0;
+    hauteur de ligne: 2,5;
+    rembourrage: 0 20px;
+    taille de la police: 1rem;
+    text-align: centre;
+    couleur: #fff;
+    ombre de texte: 1px 1px 1px # 000;
+    rayon de la bordure: 10px;
+    couleur de fond: rgba (220, 0, 0, 1);
+    background-image: linear-gradient (en haut à gauche,
+                                      rgba (0, 0, 0, .2),
+                                      rgba (0, 0, 0, .2) 30%,
+                                      rgba (0, 0, 0, 0));
+    boîte-ombre: encart 2px 2px 3px rgba (255, 255, 255, .6),
+                encart -2px -2px 3px rgba (0, 0, 0, .6);
+}
+
+.styled: hover {
+    couleur de fond: rgba (255, 0, 0, 1);
+}
+
+.styled: active {
+    boîte-ombre: encart -2px -2px 3px rgba (255, 255, 255, .6),
+                encart 2px 2px 3px rgba (0, 0, 0, .6);
+}
