@@ -15,8 +15,6 @@
 
     <ul id='listeBesoins' >
     </ul> 
-    
-    
     <script>
         console.log("DEBUT");
         //création de la liste des étudiants
@@ -29,6 +27,7 @@
         //écrire la liste dans la console
         console.log(listeEtudiants);
 
+        //*boucler sur les élément de la liste
         /*boucler sur les élément de la liste
         listeEtudiants.forEach(d=>{
             //console.log(d);
@@ -36,11 +35,10 @@
         });
         */
 
-
+ 
         console.log("récupère le csv");
         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTlzShq-zEcdLIwJx1Us9OI-K6EwNyjyMbb91E0HETnakFh4zghG0BuLOL0BVWvhRWs3eGBCLz1cgp/pub?output=csv" ;
         //urlCSV = "Evaluation de cartographie de controverse_Coumba Ndaw.csv";
-        urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQgaDT2x-KZ20bSSrrnHlnGKrUa5OKs25322kfizkaSXx6hUCQ4qXylp7DQk_N0Sqirp6LkqGsDTIb0/pub?gid=638149350&single=true&output=csv";
         d3.csv(urlCSV).then(function(data) {
             console.log("csv récupéré");
             console.log(data);
