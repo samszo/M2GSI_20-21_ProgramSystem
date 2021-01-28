@@ -26,8 +26,9 @@
         <tbody>
             <tr>
                 <td>
-                    <ul id="listeEtu">
-                    </ul>                            
+                    <div id='listeGauche'>
+                        <ul id="listeEtu"></ul>
+                    </div>                                
                 </td>
                 <td>
                     <div id='frmForm' class='ifr'>
@@ -39,7 +40,8 @@
                     </div>
                 </td>
                 <td>
-                    <div id='frmRep' class='ifr'><iframe class='ifr'  id="ifrmRep"
+                    <div id='frmRep' class='ifr'>
+                        <iframe class='ifr'  id="ifrmRep"
                         title="Les réponses"
                         src="https://samszo.github.io/M2GSI_20-21_ProgramSystem/"
                         >
@@ -98,17 +100,19 @@
         var ulLien = document.createElement("ul");
         var liLien = document.createElement("li");
         var urlLien = "https://samszo.github.io/M2GSI_20-21_ProgramSystem/"+d['Votre compte GitHub'];
-        liLien.innerHTML = '<a target="_blank" href="'+urlLien+'/formulaire.html'+'" class="form" >lien vers le formulaire</a>';
+        d.lienForm = urlLien+'/formulaire.html';
+        d.lienListeForm = urlLien+'/liste-formulaire.html';
+        liLien.innerHTML = '<a target="_blank" href="'+d.lienForm+'" class="form" >lien vers le formulaire</a>';
         ulLien.appendChild(liLien);
         liLien = document.createElement("li");
-        liLien.innerHTML = '<a target="_blank" href="'+urlLien+'/liste-formulaire.html'+'" class="reponse" >lien vers les réponses</a>';
+        liLien.innerHTML = '<a target="_blank" href="'+d.lienListeForm+'" class="reponse" >lien vers les réponses</a>';
         ulLien.appendChild(liLien);
 
         //ajjoute un bouton de visualisation des pages
         var btnAfficheIframe = document.createElement("button");
         btnAfficheIframe.setAttribute("class", "favorite styled");
         btnAfficheIframe.setAttribute("type", "button");
-        btnAfficheIframe.innerHTML = 'Affiche les pages';
+        btnAfficheIframe.innerHTML = 'Afficher les pages';
         btnAfficheIframe.addEventListener("click", function(e) {
             affichePage(d);
         });
@@ -135,6 +139,17 @@
 
     function affichePage(d){
         console.log(d);
+
+        //récupérer l'ifram pour le formulaire
+        var ifr = document.getElementById('ifrmForm');
+        //changer la source de ifrmForm
+        ifr.setAttribute("src", d.lienForm);
+
+        //récupérer l'ifram pour la liste formulaire
+        ifr = document.getElementById('ifrmRep');
+        //changer la source de ifrmRep
+        ifr.setAttribute("src", d.lienListeForm);
+
     }
 
     </script>

@@ -33,6 +33,12 @@ li {
     height: 600px;
     width: 600px;
 }
+
+#listeGauche {
+    height: 600px;
+    overflow: scroll;
+}
+
 .styled {
     border: 0;
     line-height: 2.5;
