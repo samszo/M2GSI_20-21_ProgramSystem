@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des formulaires</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>  
+
+    <h1>Liste des formulaires étudiants</h1>
+
+    <ul id="listeEtu">
+    </ul>
+
+    <ul id='listeBesoins' >
+    </ul> 
+    
+    
+    <script>
+        console.log("DEBUT");
+        //création de la liste des étudiants
+        let listeEtudiants=[
+            {'nom':'titi',"github":'Aissatou-Cis','besoins':['html','javascript']}
+            ,{'nom':'tata','github':'tat','besoins':['html','css']}
+            ,{'nom':'toto','github':'totoot'}
+            ,{'nom':'Machin truc chouette','github':'totoot'}
+        ];
+        //écrire la liste dans la console
+        console.log(listeEtudiants);
+
+        /*boucler sur les élément de la liste
+        listeEtudiants.forEach(d=>{
+            //console.log(d);
+            ajoutLi(d,'listeEtu');
+        });
+        */
+
+
+        console.log("récupère le csv");
+        let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTZV49pnTBLVBHHgFN8EAe8uWHnsFo8lImB5tb3-AN4LVF1WoDRrC0bY4MkNK2oa7rb_CkwkH-S7CGe/pub?gid=958919662&single=true&output=csv" ;
+        //urlCSV = "notesM2GSI.csv";
+        //urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQgaDT2x-KZ20bSSrrnHlnGKrUa5OKs25322kfizkaSXx6hUCQ4qXylp7DQk_N0Sqirp6LkqGsDTIb0/pub?gid=638149350&single=true&output=csv";
+        d3.csv(urlCSV).then(function(data) {
+            console.log("csv récupéré");
+            console.log(data);
+            data.forEach(d=>{
+                //console.log(d);
+                ajoutLi(d,'listeEtu');
+            });
+
+        });
+        console.log("Fait autre chose");
+
+
+    function ajoutLi(d, idListe) {
+        var ul = document.getElementById(idListe);
+        var liEtu = document.createElement("li");
+        var liTxt = document.createTextNode(d['Votre nom']+' '+d['Votre prénom']+' ('+d['Votre compte GitHub']+')');
+        //var liTxt = document.createTextNode(d['URL vers la cartographie ?']+' = '+d['Qualité esthétique de la cartographie ?']);
+        liEtu.appendChild(liTxt);
+
+        var ulProp = document.createElement("ul");
+        for (const property in d) {
+            var liProp = document.createElement("li");
+            var PropTxt = document.createTextNode(d[property]);
+            liProp.appendChild(PropTxt);
+            ulProp.appendChild(liProp);
+        }
+        liEtu.appendChild(ulProp);            
+        ul.appendChild(liEtu);
+    }
+
+    console.log('FIN');
+    </script>
+</body>
+</html>
