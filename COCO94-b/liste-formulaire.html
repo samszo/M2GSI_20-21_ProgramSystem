@@ -38,9 +38,9 @@
 
 
         console.log("récupère le csv");
-        let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQHni5Lu--I9WKTWGHOJ3_SBRW47sPTvxxRN6FOaGchhMztr4gm3I5C91EJq1CcGOsmfsOfa2f7PfrF/pub?gid=1651539069&single=true&output=csv" ;
+        let urlCSV = "https://docs.google.com/forms/d/e/1FAIpQLScjljowepb8WANQxBWYvCeCupx-5-d8v1XjTHV7-UUKxHlbCw/viewform?fbzx=4132460636481766686" ;
         //urlCSV = "notesM2GSI.csv";
-        //urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQgaDT2x-KZ20bSSrrnHlnGKrUa5OKs25322kfizkaSXx6hUCQ4qXylp7DQk_N0Sqirp6LkqGsDTIb0/pub?gid=638149350&single=true&output=csv";
+        //urlCSV = "https://docs.google.com/forms/u/0/d/e/1FAIpQLScjljowepb8WANQxBWYvCeCupx-5-d8v1XjTHV7-UUKxHlbCw/formResponse";
         d3.csv(urlCSV).then(function(data) {
             console.log("csv récupéré");
             console.log(data);
@@ -71,7 +71,13 @@
         liEtu.appendChild(ulProp);            
         ul.appendChild(liEtu);
     }
-
+    /// afficher quelques réponses du formulaire
+            var  ulProp  =  document . createElement ( "ul" ) ;
+            for  ( propriété const  en d ) {   
+                if ( property == 'Numéro étudiant'
+                    ||  property == "Compréhension générale du cours"
+                    ||  property == "Prise en main des outils étudiés"
+                ) {
     console.log('FIN');
     </script>
 </body>
