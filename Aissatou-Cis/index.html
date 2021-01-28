@@ -1,0 +1,142 @@
+<! DOCTYPE html >
+< html  lang = " en " >
+< tête >
+    < meta  charset = " UTF-8 " >
+    < meta  name = " viewport " content = " width = device-width, initial-scale = 1.0 " >
+    < title > Liste des formulaires </ title >
+    < script  src = " https://d3js.org/d3.v6.min.js " > </ script >
+
+    < link  href = " style.css " rel = " stylesheet " >
+
+</ tête >
+< corps >
+
+
+    < table >
+        < thead >
+            < tr >
+                < th  colspan = " 3 " > < h1 > TRAVAUX DU COURS </ h1 > </ th >
+            </ tr >
+            < tr >
+                < td > < h2 > Liste des étudiants </ h2 > </ td >
+                < td > < h2 > Formulaire </ h2 > </ td >
+                < td > < h2 > Réponse </ h2 > </ td >
+            </ tr >
+        </ thead >
+        < tbody >
+            < tr >
+                < td >
+                    < ul  id = " listeEtu " >
+                    </ ul >
+                </ td >
+                < td >
+                    < div  id = ' frmForm ' class = ' ifr ' >
+                        < iframe  class = ' ifr ' id = " ifrmForm "
+                            title = " Le formulaire "
+                            src = " https://samszo.github.io/M2GSI_20-21_ProgramSystem/ "
+                        >
+                        </ iframe >
+                    </ div >
+                </ td >
+                < td >
+                    < div  id = ' frmRep ' class = ' ifr ' > < iframe  class = ' ifr '   id = " ifrmRep "
+                        title = " Les réponses "
+                        src = " https://samszo.github.io/M2GSI_20-21_ProgramSystem/ "
+                        >
+                    </ iframe >
+                </ div >
+                </ td >
+            </ tr >
+        </ tbody >
+    </ table >
+
+
+    < script >
+        console . log ( "DEBUT" ) ;
+        // création de la liste des étudiants
+        laissez  listeEtudiants = [
+            { 'nom' : 'titi' , "github" : 'Aissatou-Cis' , 'besoins' : [ 'html' , 'javascript' ] }
+            , { 'nom' : 'tata' , 'github' : 'tat' , 'besoins' : [ 'html' , 'css' ] }
+            , { 'nom' : 'toto' , 'github' : 'totoot' }
+            , { 'nom' : 'Machin truc chouette' , 'github' : 'totoot' }
+        ] ;
+        // écrire la liste dans la console
+        console . log ( listeEtudiants ) ;
+
+        / * boucler sur les élément de la liste
+        listeEtudiants.forEach (d => {
+            //console.log(d);
+            ajoutLi (d, 'listeEtu');
+        });
+        * /
+
+
+        console . log ( "récupère le csv" ) ;
+        laisser  urlCSV  =  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQHni5Lu--I9WKTWGHOJ3_SBRW47sPTvxxRN6FOaGchhMztr4gm3I5C91EJq1CcGOsmfsOfa2f7PfrF/pub?gid=1651539069&single=true&output=csv"  ;
+        // urlCSV = "notesM2GSI.csv";
+        // urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQgaDT2x-KZ20bSSrrnHlnGKrUa5OKs25322kfizkaSXx6hUCQ4qXylp7DQk_N0Sqirp=treadsheets14"
+        d3 . csv ( urlCSV ) . alors ( fonction ( données )  {
+            console . log ( "csvéré" ) ;
+            console . log ( données ) ;
+            données . forEach ( d => {
+                //console.log(d);
+                ajoutLi ( d , 'listeEtu' ) ;
+            } ) ;
+
+        } ) ;
+        console . log ( "Fait autre chose" ) ;
+
+
+    function  ajoutLi ( d ,  idListe )  {
+        var  ul  =  document . getElementById ( idListe ) ;
+        var  liEtu  =  document . createElement ( "li" ) ;
+        var  liTxt  =  document . createTextNode ( d [ 'Votre prénom' ] + '' + d [ 'Votre nom' ] + '(' + d [ 'Votre compte GitHub' ] + ')' ) ;
+        // var liTxt = document.createTextNode (d ['URL vers la cartographie?'] + '=' + d ['Qualité esthétique de la cartographie?']);
+        liEtu . appendChild ( liTxt ) ;
+
+        // afficher les lien vers le formulaire et la liste des réponses
+        var  ulLien  =  document . createElement ( "ul" ) ;
+        var  liLien  =  document . createElement ( "li" ) ;
+        var  urlLien  =  "https://samszo.github.io/M2GSI_20-21_ProgramSystem/" + d [ 'Votre compte GitHub' ] ;
+        liLien . innerHTML  =  '<a target="_blank" href="' + urlLien +'/formulaire.html' +'" class="form"> Lien vers le formulaire </a>' ;
+        ulLien . appendChild ( liLien ) ;
+        liLien  =  document . createElement ( "li" ) ;
+        liLien . innerHTML  =  '<a target="_blank" href="' + urlLien + +'/liste-formulaire.html''" class="reponse"> link to les Réponses </a>' ;
+        ulLien . appendChild ( liLien ) ;
+
+        // ajjoute un bouton de visualisation des pages
+        var  btnAfficheIframe  =  document . createElement ( "bouton" ) ;
+        btnAfficheIframe . setAttribute ( "classe" ,  "style favori" ) ;
+        btnAfficheIframe . setAttribute ( "type" ,  "bouton" ) ;
+        btnAfficheIframe . innerHTML  =  'Affiche les pages' ;
+        btnAfficheIframe . addEventListener ( "clic" ,  fonction ( e )  {
+            affichePage ( d ) ;
+        } ) ;
+        ulLien . appendChild ( btnAfficheIframe ) ;
+
+
+        // ajoute la liste à l'itme de l'atudiant
+        liEtu . appendChild ( ulLien ) ;
+
+        / * afficher toute la propriété d'un objet
+        var ulProp = document.createElement ("ul");
+        for (propriété const en d) {
+            var liProp = document.createElement ("li");
+            var PropTxt = document.createTextNode (d [propriété]);
+            liProp.appendChild (PropTxt);
+            ulProp.appendChild (liProp);
+        }
+        liEtu.appendChild (ulProp);
+        * /
+        ul . appendChild ( liEtu ) ;
+    }
+
+    console . log ( 'FIN' ) ;
+
+    function  affichePage ( d ) {
+        console . log ( d ) ;
+    }
+
+    </ script >
+</ corps >
+</ html >

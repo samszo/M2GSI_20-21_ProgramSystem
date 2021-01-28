@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des formulaires</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
-
 </head>
 <body>  
-    
 
-    <h1>Liste des étudiants</h1>
+    <h1>Liste des formulaires étudiants</h1>
+
     <ul id="listeEtu">
     </ul>
+
+    <ul id='listeBesoins' >
+    </ul> 
     
     
     <script>
@@ -25,7 +27,6 @@
             ,{'nom':'Machin truc chouette','github':'totoot'}
         ];
         //écrire la liste dans la console
-        console.log(listeEtudiants);
 
         /*boucler sur les élément de la liste
         listeEtudiants.forEach(d=>{
@@ -36,8 +37,8 @@
 
 
         console.log("récupère le csv");
-        let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQHni5Lu--I9WKTWGHOJ3_SBRW47sPTvxxRN6FOaGchhMztr4gm3I5C91EJq1CcGOsmfsOfa2f7PfrF/pub?gid=1651539069&single=true&output=csv" ;
-        //urlCSV = "notesM2GSI.csv";
+        let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRQ6cj2lGf_FaF239tJp7jR84ijjVOgPMFc0E28UuUbHOw_gFrhKf3StrI6l_9ZssKkjhRxe9GkfzVD/pub?gid=1758603689&single=true&output=csv" ;
+        //urlCSV = "votre reseau social formulaire.csv";
         //urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQgaDT2x-KZ20bSSrrnHlnGKrUa5OKs25322kfizkaSXx6hUCQ4qXylp7DQk_N0Sqirp6LkqGsDTIb0/pub?gid=638149350&single=true&output=csv";
         d3.csv(urlCSV).then(function(data) {
             console.log("csv récupéré");
@@ -54,22 +55,10 @@
     function ajoutLi(d, idListe) {
         var ul = document.getElementById(idListe);
         var liEtu = document.createElement("li");
-        var liTxt = document.createTextNode(d['Votre prénom']+' '+d['Votre nom']+' ('+d['Votre compte GitHub']+')');
+        var liTxt = document.createTextNode(d['URL vers votre réseau social préféré ?']+' '+d['Niveau de préférence de ce réseau social']+''+d['Quel en est l'utilité ?']+''+d['Publiez vous régulièrement du contenu ?']+''+d['Communiquez vous souvent dessus ?']+''+d['Avec qui communiquez vous sur ce réseau social ?']+''+d['Quels types de contenus postez vous ?']+''+d['Faites vous des rencontres sur ce réseau social ?']+''+d['Ajoutez vous des personnes que vous ne connaissez pas ?']+''+d['Recommandez vous ce réseau social autour de vous ?']+''+d['Votre nom']+' ('+d['Votre compte GitHub']+')');
         //var liTxt = document.createTextNode(d['URL vers la cartographie ?']+' = '+d['Qualité esthétique de la cartographie ?']);
         liEtu.appendChild(liTxt);
 
-        //afficher les lien vers le formulaire et la liste des réponse
-        var ulLien = document.createElement("ul");
-        var liLien = document.createElement("li");
-        var urlLien = "https://samszo.github.io/M2GSI_20-21_ProgramSystem/"+d['Votre compte GitHub'];
-        liLien.innerHTML = '<a href="'+urlLien+'/formulaire.html'+'" >lien vers le formulaire</a>';
-        ulLien.appendChild(liLien);
-        liLien = document.createElement("li");
-        liLien.innerHTML = '<a href="'+urlLien+'/liste-formulaire.html'+'" >lien vers les réponses</a>';
-        ulLien.appendChild(liLien);
-        liEtu.appendChild(ulLien);            
-
-        /*afficher toute les propriété d'un objet
         var ulProp = document.createElement("ul");
         for (const property in d) {
             var liProp = document.createElement("li");
@@ -78,7 +67,6 @@
             ulProp.appendChild(liProp);
         }
         liEtu.appendChild(ulProp);            
-        */
         ul.appendChild(liEtu);
     }
 
