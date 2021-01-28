@@ -53,10 +53,12 @@
 
 
     function ajoutLi(d, idListe) {
-        var ul = document.getElementById(idListe);
-        var liEtu = document.createElement("li");
-        var liTxt = document.createTextNode(d['Votre nom']+' '+d["2. Quelles sources d'information privilégiez-vous  ?"]+' ('+d['5. Vous arrive-t-il de regarder des documentaires ?']+')');
-        liEtu.appendChild(liTxt);
+         var ul = document.getElementById(idListe);
+         var liEtu = document.createElement("li");
+         //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
+         var liTxt = document.createTextNode(d['Horodateur']);
+         liEtu.appendChild(liTxt);
+
 
         var ulProp = document.createElement("ul");
 for (const property in d) {
