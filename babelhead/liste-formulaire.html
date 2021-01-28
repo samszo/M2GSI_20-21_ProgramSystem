@@ -37,7 +37,7 @@
 
 
          console.log("récupère le csv");
-         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSaWoUFxRlyerPuoZyrJCB-lEH_eUNdS3B2dTsS4BBmsFCHHnWVbxFsg7G-cUu1bRXdRCNE99k7oYdd/pubhtml" ;
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSaWoUFxRlyerPuoZyrJCB-lEH_eUNdS3B2dTsS4BBmsFCHHnWVbxFsg7G-cUu1bRXdRCNE99k7oYdd/pub?output=csv" ;
          //urlCSV = "Question air.csv";
          d3.csv(urlCSV).then(function(data) {
              console.log("csv récupéré");
