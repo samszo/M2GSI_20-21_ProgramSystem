@@ -19,7 +19,7 @@
             </tr>
             <tr>
                 <td><h2>Liste des étudiants</h2></td>
-                <td><h2>Formulaire</h2></td>
+                <td><h2>Formulaire<span id='auteurForm'></span></h2></td>
                 <td><h2>Réponse</h2></td>
             </tr>
         </thead>
@@ -140,6 +140,10 @@
     function affichePage(d){
         console.log(d);
 
+        //affiche le nopm de l'auteur du formulaire
+        var af = document.getElementById('auteurForm');
+        af.innerHTML = ' de : '+d['Votre prénom']+' '+d['Votre nom'];        
+        
         //récupérer l'ifram pour le formulaire
         var ifr = document.getElementById('ifrmForm');
         //changer la source de ifrmForm
