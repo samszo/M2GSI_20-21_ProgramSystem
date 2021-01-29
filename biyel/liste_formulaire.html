@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des formulaires</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>  
+
+    <h1>Liste des formulaires étudiants</h1>
+
+    <ul id="listeEtu">
+    </ul>
+
+    <ul id='listeBesoins' >
+    </ul> 
+    
+    
+    <script>
+        console.log("DEBUT");
+        //création de la liste des étudiants
+        let listeEtudiants=[
+            {'nom':'titi',"github":'Aissatou-Cis','besoins':['html','javascript']}
+            ,{'nom':'tata','github':'tat','besoins':['html','css']}
+            ,{'nom':'toto','github':'totoot'}
+            ,{'nom':'Machin truc chouette','github':'totoot'}
+        ];
+        //écrire la liste dans la console
+        console.log(listeEtudiants);
+
+        /*boucler sur les élément de la liste
+        listeEtudiants.forEach(d=>{
+            //console.log(d);
+            ajoutLi(d,'listeEtu');
+        });
+        */
+
+
+        console.log("récupère le csv");
+        let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTYpokcPUI-rAynAX2FKqgbNN_vl4ibB-MZvFbFOD9t2bifnR_gQmhwoHkta7D5eFVJjlX6IOeHLtNp/pub?gid=986414269&single=true&output=csv" ;
+        //urlCSV = "Réponses au formulaire 1.csv";
+        d3.csv(urlCSV).then(function(data) {
+            console.log("csv récupéré");
+            console.log(data);
+            data.forEach(d=>{
+                //console.log(d);
+                ajoutLi(d,'listeEtu');
+            });
+
+        });
+        console.log("Fait autre chose");
+
+
+    function ajoutLi(d, idListe) {
+         var ul = document.getElementById(idListe);
+         var liEtu = document.createElement("li");
+         //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
+         var liTxt = document.createTextNode(d['Horodateur']);
+         liEtu.appendChild(liTxt);
+
+
+        var ulProp = document.createElement("ul");
+for (const property in d) {
+   if(property=='Votre nom'
+       || property=="2. Quelles sources d'information privilégiez-vous  ?"
+       || property=="5. Vous arrive-t-il de regarder des documentaires ?"
+   ){
+       var liProp = document.createElement("li");
+       var PropTxt = document.createTextNode(property+' = '+d[property]);
+       liProp.appendChild(PropTxt);
+       ulProp.appendChild(liProp);
+   }
+}
+liEtu.appendChild(ulProp);          
+      
+
+         if(d.besoins){
+            var ulBesoin = document.createElement("ul");
+            d.besoins.forEach(b=>{
+                var liBesoin = document.createElement("li");
+                var besoinTxt = document.createTextNode(b);
+                liBesoin.appendChild(besoinTxt);
+                ulBesoin.appendChild(liBesoin);
+            })
+            liEtu.appendChild(ulBesoin);            
+        }
+        ul.appendChild(liEtu);
+    }
+    console.log('FIN');
+    </script>
+</body>
+</html>
