@@ -58,13 +58,13 @@
 
         if(d.besoins){
             var ulBesoin = document.createElement("ul");
-            d.besoins.forEach(b=>{
-                var liBesoin = document.createElement("li");
-                var besoinTxt = document.createTextNode(b);
-                liBesoin.appendChild(besoinTxt);
-                ulBesoin.appendChild(liBesoin);
-          
-            })
+           ///afficher quelques réponse du formulaire
+        var ulProp = document.createElement("ul");
+        for (const property in d) {
+            if(property=='Carte ? '
+                || property=="Pertinence ?"
+                || property=="Analyse ?"
+            ){
             liEtu.appendChild(ulBesoin);            
         }
 
