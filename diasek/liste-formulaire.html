@@ -6,13 +6,11 @@
     <title>Liste des formulaires</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
+
 <body>  
-
     <h1>Liste des étudiants</h1>
-
     <ul id="listeEtu">
     </ul>
-
     <ul id='listeBesoins' >
     </ul> 
     
@@ -26,8 +24,10 @@
             ,{'nom':'toto','github':'totoot'}
             ,{'nom':'Machin truc chouette','github':'totoot'}
         ];
-        //écrire la liste dans la console
+         //écrire la liste dans la console
+         console.log(listeEtudiants);
 
+         //boucler sur les élément de la liste
         /*boucler sur les élément de la liste
         listeEtudiants.forEach(d=>{
             //console.log(d);
@@ -56,6 +56,9 @@
     function ajoutLi(d, idListe) {
         var ul = document.getElementById(idListe);
         var liEtu = document.createElement("li");
+        //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
+        var liTxt = document.createTextNode(d['Horodateur']);
+        liEtu.appendChild(liTxt);
         var liTxt = document.createTextNode(d['URL vers votre réseau social préféré ?']
                                             +' '+d['Niveau de préférence de ce réseau social']
                                             +''+d['Quel en est l"utilité ?']+''
@@ -68,8 +71,10 @@
                                             +''+d['Recommandez vous ce réseau social autour de vous ?']
                                             +'('+d['Votre compte GitHub']+')');
         //var liTxt = document.createTextNode(d['URL vers la cartographie ?']+' = '+d['Qualité esthétique de la cartographie ?']);
-        liEtu.appendChild(liTxt);
+        
 
+
+         ///afficher quelques réponses du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
             if(property=='URL vers votre réseau social préféré ? '
@@ -83,7 +88,7 @@
                || property=="Ajoutez vous des personnes que vous ne connaissez pas ?"
                 || property=="Recommandez vous ce réseau social autour de vous ?"
                 || property=="Votre compte GitHub"
-            var liProp = document.createElement("li");
+             ) var liProp = document.createElement("li");
             var PropTxt = document.createTextNode(d[property+'='+[property]);
             liProp.appendChild(PropTxt);
             ulProp.appendChild(liProp);
