@@ -88,8 +88,8 @@
                || property=="Ajoutez vous des personnes que vous ne connaissez pas ?"
                 || property=="Recommandez vous ce réseau social autour de vous ?"
                 || property=="Votre compte GitHub"
-             ) var liProp = document.createElement("li");
-            var PropTxt = document.createTextNode(d[property+'='+[property]);
+             ){ var liProp = document.createElement("li");
+            var PropTxt = document.createTextNode(d[property]+'='+[property]);
             liProp.appendChild(PropTxt);
             ulProp.appendChild(liProp);
         }
