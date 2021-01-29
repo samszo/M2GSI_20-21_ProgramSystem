@@ -18,7 +18,7 @@
             </tr>
             <tr>
                 <td><h2>Liste des étudiants</h2></td>
-                <td><h2>Formulaire<span id='auteurForm'></span></h2></td>
+                <td><h2 id='auteurForm'></h2></td>
                 <td><h2>Réponse</h2></td>
             </tr>
         </thead>
@@ -92,9 +92,10 @@
     function ajoutLi(d, idListe) {
         var ul = document.getElementById(idListe);
         var liEtu = document.createElement("li");
-        var liTxt = document.createTextNode(d['Votre prénom']+' '+d['Votre nom']+' ('+d['Votre compte GitHub']+')');
+        //var liTxt = document.createTextNode(d['Votre prénom']+' '+d['Votre nom']+' ('+d['Votre compte GitHub']+')');
         //var liTxt = document.createTextNode(d['URL vers la cartographie ?']+' = '+d['Qualité esthétique de la cartographie ?']);
-        liEtu.appendChild(liTxt);
+        //liEtu.appendChild(liTxt);
+        liEtu.innerHTML = '<h4>'+d['Votre prénom']+' '+d['Votre nom']+' ('+d['Votre compte GitHub']+') - '+d['N° étudiant']+'</h4>';
 
         //afficher les lien vers le formulaire et la liste des réponse
         var ulLien = document.createElement("ul");
@@ -102,21 +103,19 @@
         var urlLien = "https://samszo.github.io/M2GSI_20-21_ProgramSystem/"+d['Votre compte GitHub'];
         d.lienForm = urlLien+'/formulaire.html';
         d.lienListeForm = urlLien+'/liste-formulaire.html';
-        liLien.innerHTML = '<a target="_blank" href="'+d.lienForm+'" class="form" >lien vers le formulaire</a>';
-        ulLien.appendChild(liLien);
-        liLien = document.createElement("li");
-        liLien.innerHTML = '<a target="_blank" href="'+d.lienListeForm+'" class="reponse" >lien vers les réponses</a>';
-        ulLien.appendChild(liLien);
+        liLien.innerHTML = '<a target="_blank" href="'+d.lienForm+'" class="form" >formulaire</a>'
+            +' - '+'<a target="_blank" href="'+d.lienListeForm+'" class="reponse" >réponses</a>';
 
         //ajoute un bouton de visualisation des pages
         var btnAfficheIframe = document.createElement("button");
         btnAfficheIframe.setAttribute("class", "favorite styled");
         btnAfficheIframe.setAttribute("type", "button");
-        btnAfficheIframe.innerHTML = 'Afficher les pages';
+        btnAfficheIframe.innerHTML = 'voir';
         btnAfficheIframe.addEventListener("click", function(e) {
             affichePage(d);
         });
-        ulLien.appendChild(btnAfficheIframe);
+        liLien.appendChild(btnAfficheIframe);
+        ulLien.appendChild(liLien);
 
         //ajouter l'item pour afficher l'image de la carto
         var imgCarto = document.createElement("img");
@@ -148,7 +147,7 @@
 
         //affiche le nopm de l'auteur du formulaire
         var af = document.getElementById('auteurForm');
-        af.innerHTML = ' de : '+d['Votre prénom']+' '+d['Votre nom'];        
+        af.innerHTML = 'Formulaire de : '+d['Votre prénom']+' '+d['Votre nom'];        
         
         //récupérer l'ifram pour le formulaire
         var ifr = document.getElementById('ifrmForm');
@@ -190,7 +189,11 @@
                 if(d["bibo:owner"]){
                     var imgCarto = document.getElementById('github'+d["bibo:owner"][0]["@value"]);
                     if(imgCarto){
-                        imgCarto.setAttribute("src", d.thumbnail_display_urls.square);   
+                        imgCarto.setAttribute("src", d.thumbnail_display_urls.square);
+                        imgCarto.addEventListener("click", function(e) {
+                            afficheCarte(d);
+                        });
+
                     };             
                 }
             })
@@ -200,6 +203,22 @@
         });
     }
 
+    function afficheCarte(d){
+        //affiche le nopm de l'auteur du formulaire
+        var af = document.getElementById('auteurForm');
+        af.innerHTML = 'Carte : '+d['o:title'];        
+        
+        //affiche la carte en grand format
+        var ifr = document.getElementById('ifrmForm');
+        //changer la source de ifrmForm
+        ifr.setAttribute("src", d.thumbnail_display_urls.large);
+
+        //affiche le formulaire d'évaluation
+        ifr = document.getElementById('ifrmRep');
+        //changer la source de ifrmRep
+        ifr.setAttribute("src", "");
+
+    }
     </script>
 </body>
 </html>
