@@ -1,93 +1,93 @@
-<! DOCTYPE html >
-< html  lang = " en " >
-< tête >
-    < meta  charset = " UTF-8 " >
-    < meta  name = " viewport " content = " width = device-width, initial-scale = 1.0 " >
-    < title > Liste des formulaires </ title >
-    < script  src = " https://d3js.org/d3.v6.min.js " > </ script >
-</ tête >
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des formulaires</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
 
-< corps >  
-    < h1 > Liste des formulaires étudiants </ h1 >
-    < ul  id = " listeEtu " >
-    </ ul >
-    < ul  id = ' listeBesoins ' >
-    </ ul > 
+<body>  
+    <h1>Liste des formulaires étudiants</h1>
+    <ul id="listeEtu">
+    </ul>
+    <ul id='listeBesoins' >
+    </ul> 
     
     
-    < script >
-        console . log ( "DEBUT" ) ;
-        // création de la liste des étudiants
-        laissez  listeEtudiants = [
-            { 'nom' : 'titi' , "github" : 'Aissatou-Cis' , 'besoins' : [ 'html' , 'javascript' ] }
-            , { 'nom' : 'tata' , 'github' : 'tat' , 'besoins' : [ 'html' , 'css' ] }
-            , { 'nom' : 'toto' , 'github' : 'totoot' }
-            , { 'nom' : 'Machin truc chouette' , 'github' : 'totoot' }
-        ] ;
-         // écrire la liste dans la console
-         console . log ( listeEtudiants ) ;
+    <script>
+        console.log("DEBUT");
+        //création de la liste des étudiants
+        let listeEtudiants=[
+            {'nom':'titi',"github":'Aissatou-Cis','besoins':['html','javascript']}
+            ,{'nom':'tata','github':'tat','besoins':['html','css']}
+            ,{'nom':'toto','github':'totoot'}
+            ,{'nom':'Machin truc chouette','github':'totoot'}
+        ];
+         //écrire la liste dans la console
+         console.log(listeEtudiants);
 
-         // boucler sur les élément de la liste
-         / * boucler sur les élément de la liste
-         listeEtudiants.forEach (d => {
+         //boucler sur les élément de la liste
+         /*boucler sur les élément de la liste
+         listeEtudiants.forEach(d=>{
              //console.log(d);
-             ajoutLi (d, 'listeEtu');
+             ajoutLi(d,'listeEtu');
          });
-         * /
+         */
 
 
-         console . log ( "récupère le csv" ) ;
-         laisser  urlCSV  =  "https://docs.google.com/spreadsheets/d/e/2PACX-1vTbKIgHiodl9jwok5fE4xw-IlROrT3-RRc6FRlQkweRQ3sm4zXsHypCRD8UXn2LSk88PKuB0RC2Z0q8/pub?gid=272422219&single=true&output=csv"  ;
-         // urlCSV = "Etudes_sur_la qualite_des_cours_distance_Reponses_au_formulaire_1.csv";
-         d3 . csv ( urlCSV ) . alors ( fonction ( données )  {
-             console . log ( "csvéré" ) ;
-             console . log ( données ) ;
-             données . forEach ( d => {
+         console.log("récupère le csv");
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR4StUbdnp5RGYgrIqva905OZEgsRfRhjpxSeXF_Lt9tcLyEKypujT-ElFXVGbdTBqdZ6hfbeMUqHki/pub?gid=468070184&single=true&output=csv" ;
+         //urlCSV = "Reponses_au_formulaire_1.csv";
+         d3.csv(urlCSV).then(function(data) {
+             console.log("csv récupéré");
+             console.log(data);
+             data.forEach(d=>{
                  //console.log(d);
-                 ajoutLi ( d , 'listeEtu' ) ;
-             } ) ;
+                 ajoutLi(d,'listeEtu');
+             });
 
-         } ) ;
-         console . log ( "Fait autre chose" ) ;
+         });
+         console.log("Fait autre chose");
 
 
-     function  ajoutLi ( d ,  idListe )  {
-         var  ul  =  document . getElementById ( idListe ) ;
-         var  liEtu  =  document . createElement ( "li" ) ;
-         // var liTxt = document.createTextNode (d.nom + '(' + d.github + ')');
-         var  liTxt  =  document . createTextNode ( d [ 'Horodateur' ] ) ;
-         liEtu . appendChild ( liTxt ) ;
+     function ajoutLi(d, idListe) {
+         var ul = document.getElementById(idListe);
+         var liEtu = document.createElement("li");
+         //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
+         var liTxt = document.createTextNode(d['Horodateur']);
+         liEtu.appendChild(liTxt);
 
-        /// afficher quelques réponses du formulaire
-        var  ulProp  =  document . createElement ( "ul" ) ;
-        for  ( propriété const  en d ) {   
-            if ( property == 'Suivez-vous des cours en ligne depuis la fin du deuxième confinement?'
-                ||  property == "Êtes-vous équipé d'outils numériques suffisants pour suivre vos cours en ligne et faire vos devoirs?"
-                ||  property == "Depuis le début de cette pandémie, à quand remonte la dernière fois que vous n'avez pas rendu votre devoir à l'heure?"
-            ) {
-                var  liProp  =  document . createElement ( "li" ) ;
-                var  PropTxt  =  document . createTextNode ( propriété + '=' + d [ propriété ] ) ;
-                liProp . appendChild ( PropTxt ) ;
-                ulProp . appendChild ( liProp ) ;
+        ///afficher quelques réponse du formulaire
+        var ulProp = document.createElement("ul");
+        for (const property in d) {
+            if(property=='Votre Nom et Prénom ? '
+                || property=="Quelles sont les sources que vous utilisez lorsque vous cherchez de l’information concernant le covid ?"
+                || property=="A quelle fréquence d'utilisation ?"
+            ){
+                var liProp = document.createElement("li");
+                var PropTxt = document.createTextNode(property+' = '+d[property]);
+                liProp.appendChild(PropTxt);
+                ulProp.appendChild(liProp);
             }
         }
-        liEtu . appendChild ( ulProp ) ;            
+        liEtu.appendChild(ulProp);            
 
 
 
-         if ( d . besoins ) {
-            var  ulBesoin  =  document . createElement ( "ul" ) ;
-            d . besoins . forEach ( b => {
-                var  liBesoin  =  document . createElement ( "li" ) ;
-                var  besoinTxt  =  document . createTextNode ( b ) ;
-                liBesoin . appendChild ( besoinTxt ) ;
-                ulBesoin . appendChild ( liBesoin ) ;
-            } )
-            liEtu . appendChild ( ulBesoin ) ;            
+         if(d.besoins){
+            var ulBesoin = document.createElement("ul");
+            d.besoins.forEach(b=>{
+                var liBesoin = document.createElement("li");
+                var besoinTxt = document.createTextNode(b);
+                liBesoin.appendChild(besoinTxt);
+                ulBesoin.appendChild(liBesoin);
+            })
+            liEtu.appendChild(ulBesoin);            
         }
-        ul . appendChild ( liEtu ) ;
+        ul.appendChild(liEtu);
     }
-    console . log ( 'FIN' ) ;
-    </ script >
-</ corps >
-</ html >
+    console.log('FIN');
+    </script>
+</body>
+</html>
