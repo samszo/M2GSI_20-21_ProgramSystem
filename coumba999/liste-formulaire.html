@@ -71,7 +71,23 @@
                 ulProp.appendChild(liProp);
             }
         }
-        liEtu.appendChild(ulProp);            
+        liEtu.appendChild(ulProp); 
+            
+            
+            
+             if(d.besoins){
+            var ulBesoin = document.createElement("ul");
+            d.besoins.forEach(b=>{
+                var liBesoin = document.createElement("li");
+                var besoinTxt = document.createTextNode(b);
+                liBesoin.appendChild(besoinTxt);
+                ulBesoin.appendChild(liBesoin);
+            })
+            liEtu.appendChild(ulBesoin);            
+        }
+        ul.appendChild(liEtu);
+    }
+    console.log('FIN');
 
     </script>
 </body>
