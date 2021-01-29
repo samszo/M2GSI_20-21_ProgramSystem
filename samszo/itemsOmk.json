@@ -1,0 +1,785 @@
+[{
+    "@context": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api-context",
+    "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/items\/104",
+    "@type": "o:Item",
+    "o:id": 104,
+    "o:is_public": true,
+    "o:owner": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/users\/1",
+        "o:id": 1
+    },
+    "o:resource_class": null,
+    "o:resource_template": null,
+    "o:thumbnail": null,
+    "o:title": "Carte des argument : transformer",
+    "thumbnail_display_urls": {
+        "large": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/large\/86a0e33e2384e7479385ccb1e77df08c1c4d435d.jpg",
+        "medium": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/medium\/86a0e33e2384e7479385ccb1e77df08c1c4d435d.jpg",
+        "square": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/square\/86a0e33e2384e7479385ccb1e77df08c1c4d435d.jpg"
+    },
+    "o:created": {
+        "@value": "2021-01-29T09:49:57+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:modified": {
+        "@value": "2021-01-29T10:50:53+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:media": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/143",
+        "o:id": 143
+    }, {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/105",
+        "o:id": 105
+    }],
+    "o:item_set": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/item_sets\/96",
+        "o:id": 96
+    }],
+    "o:site": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/sites\/2",
+        "o:id": 2
+    }],
+    "dcterms:title": [{
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "Carte des argument : transformer"
+    }]
+}, {
+    "@context": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api-context",
+    "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/items\/106",
+    "@type": "o:Item",
+    "o:id": 106,
+    "o:is_public": true,
+    "o:owner": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/users\/7",
+        "o:id": 7
+    },
+    "o:resource_class": null,
+    "o:resource_template": null,
+    "o:thumbnail": null,
+    "o:title": "Controverse sur le covid",
+    "thumbnail_display_urls": {
+        "large": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/large\/59d755e04bd7348468f3d3c5e198663c4c8da871.jpg",
+        "medium": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/medium\/59d755e04bd7348468f3d3c5e198663c4c8da871.jpg",
+        "square": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/square\/59d755e04bd7348468f3d3c5e198663c4c8da871.jpg"
+    },
+    "o:created": {
+        "@value": "2021-01-29T09:50:34+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:modified": {
+        "@value": "2021-01-29T10:52:56+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:media": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/125",
+        "o:id": 125
+    }],
+    "o:item_set": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/item_sets\/96",
+        "o:id": 96
+    }],
+    "o:site": [],
+    "dcterms:title": [{
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "Controverse sur le covid",
+        "@language": "fr"
+    }]
+}, {
+    "@context": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api-context",
+    "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/items\/107",
+    "@type": "o:Item",
+    "o:id": 107,
+    "o:is_public": true,
+    "o:owner": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/users\/22",
+        "o:id": 22
+    },
+    "o:resource_class": null,
+    "o:resource_template": null,
+    "o:thumbnail": null,
+    "o:title": "Cartographie controverse sur la covid",
+    "thumbnail_display_urls": {
+        "large": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/large\/40d8d7943acbe4032200b77647ee7d3d3c95827a.jpg",
+        "medium": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/medium\/40d8d7943acbe4032200b77647ee7d3d3c95827a.jpg",
+        "square": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/square\/40d8d7943acbe4032200b77647ee7d3d3c95827a.jpg"
+    },
+    "o:created": {
+        "@value": "2021-01-29T09:55:47+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:modified": {
+        "@value": "2021-01-29T10:52:01+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:media": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/149",
+        "o:id": 149
+    }, {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/108",
+        "o:id": 108
+    }],
+    "o:item_set": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/item_sets\/96",
+        "o:id": 96
+    }],
+    "o:site": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/sites\/2",
+        "o:id": 2
+    }],
+    "dcterms:title": [{
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "Cartographie controverse sur la covid"
+    }],
+    "dcterms:description": [{
+        "type": "literal",
+        "property_id": 4,
+        "property_label": "Description",
+        "is_public": true,
+        "@value": "Cartographie controverse format Pdf"
+    }]
+}, {
+    "@context": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api-context",
+    "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/items\/110",
+    "@type": ["o:Item", "bibo:Document"],
+    "o:id": 110,
+    "o:is_public": true,
+    "o:owner": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/users\/3",
+        "o:id": 3
+    },
+    "o:resource_class": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/resource_classes\/49",
+        "o:id": 49
+    },
+    "o:resource_template": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/resource_templates\/1",
+        "o:id": 1
+    },
+    "o:thumbnail": null,
+    "o:title": "Controverses sur le Hold Up docmuentaire du complot sur la Covid-19",
+    "thumbnail_display_urls": {
+        "large": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/large\/9de5fa2791fc0f565f5606a31c4382d1d119ef01.jpg",
+        "medium": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/medium\/9de5fa2791fc0f565f5606a31c4382d1d119ef01.jpg",
+        "square": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/square\/9de5fa2791fc0f565f5606a31c4382d1d119ef01.jpg"
+    },
+    "o:created": {
+        "@value": "2021-01-29T09:57:10+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:modified": {
+        "@value": "2021-01-29T10:58:32+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:media": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/148",
+        "o:id": 148
+    }, {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/111",
+        "o:id": 111
+    }],
+    "o:item_set": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/item_sets\/96",
+        "o:id": 96
+    }],
+    "o:site": [],
+    "dcterms:title": [{
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "Controverses sur le Hold Up docmuentaire du complot sur la Covid-19"
+    }]
+}, {
+    "@context": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api-context",
+    "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/items\/113",
+    "@type": "o:Item",
+    "o:id": 113,
+    "o:is_public": true,
+    "o:owner": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/users\/15",
+        "o:id": 15
+    },
+    "o:resource_class": null,
+    "o:resource_template": null,
+    "o:thumbnail": null,
+    "o:title": "cartographie des controverses sur Hold up",
+    "thumbnail_display_urls": {
+        "large": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1",
+        "medium": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1",
+        "square": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1"
+    },
+    "o:created": {
+        "@value": "2021-01-29T09:57:43+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:modified": {
+        "@value": "2021-01-29T10:56:29+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:media": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/121",
+        "o:id": 121
+    }, {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/154",
+        "o:id": 154
+    }],
+    "o:item_set": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/item_sets\/96",
+        "o:id": 96
+    }],
+    "o:site": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/sites\/2",
+        "o:id": 2
+    }],
+    "dcterms:title": [{
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "cartographie des controverses sur Hold up"
+    }]
+}, {
+    "@context": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api-context",
+    "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/items\/114",
+    "@type": "o:Item",
+    "o:id": 114,
+    "o:is_public": true,
+    "o:owner": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/users\/17",
+        "o:id": 17
+    },
+    "o:resource_class": null,
+    "o:resource_template": null,
+    "o:thumbnail": null,
+    "o:title": "cartographie Controverse documentaire hold up",
+    "thumbnail_display_urls": {
+        "large": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1",
+        "medium": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1",
+        "square": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1"
+    },
+    "o:created": {
+        "@value": "2021-01-29T09:57:55+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:modified": {
+        "@value": "2021-01-29T10:12:36+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:media": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/115",
+        "o:id": 115
+    }],
+    "o:item_set": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/item_sets\/96",
+        "o:id": 96
+    }],
+    "o:site": [],
+    "dcterms:title": [{
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "cartographie Controverse documentaire hold up"
+    }]
+}, {
+    "@context": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api-context",
+    "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/items\/116",
+    "@type": ["o:Item", "bibo:Document"],
+    "o:id": 116,
+    "o:is_public": true,
+    "o:owner": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/users\/11",
+        "o:id": 11
+    },
+    "o:resource_class": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/resource_classes\/49",
+        "o:id": 49
+    },
+    "o:resource_template": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/resource_templates\/1",
+        "o:id": 1
+    },
+    "o:thumbnail": null,
+    "o:title": "Cartographie Code",
+    "thumbnail_display_urls": {
+        "large": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/large\/c48c7c120e91e20046bcff60891514b52615ea48.jpg",
+        "medium": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/medium\/c48c7c120e91e20046bcff60891514b52615ea48.jpg",
+        "square": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/square\/c48c7c120e91e20046bcff60891514b52615ea48.jpg"
+    },
+    "o:created": {
+        "@value": "2021-01-29T09:58:44+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:modified": {
+        "@value": "2021-01-29T10:59:38+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:media": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/145",
+        "o:id": 145
+    }, {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/117",
+        "o:id": 117
+    }],
+    "o:item_set": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/item_sets\/96",
+        "o:id": 96
+    }],
+    "o:site": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/sites\/2",
+        "o:id": 2
+    }],
+    "dcterms:title": [{
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "Cartographie Code"
+    }]
+}, {
+    "@context": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api-context",
+    "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/items\/122",
+    "@type": "o:Item",
+    "o:id": 122,
+    "o:is_public": true,
+    "o:owner": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/users\/19",
+        "o:id": 19
+    },
+    "o:resource_class": null,
+    "o:resource_template": null,
+    "o:thumbnail": null,
+    "o:title": "cartographie hodup film",
+    "thumbnail_display_urls": {
+        "large": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1",
+        "medium": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1",
+        "square": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1"
+    },
+    "o:created": {
+        "@value": "2021-01-29T10:04:31+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:modified": {
+        "@value": "2021-01-29T10:04:31+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:media": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/123",
+        "o:id": 123
+    }],
+    "o:item_set": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/item_sets\/96",
+        "o:id": 96
+    }],
+    "o:site": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/sites\/2",
+        "o:id": 2
+    }],
+    "dcterms:title": [{
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "cartographie hodup film"
+    }]
+}, {
+    "@context": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api-context",
+    "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/items\/124",
+    "@type": ["o:Item", "bibo:Document"],
+    "o:id": 124,
+    "o:is_public": true,
+    "o:owner": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/users\/6",
+        "o:id": 6
+    },
+    "o:resource_class": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/resource_classes\/49",
+        "o:id": 49
+    },
+    "o:resource_template": null,
+    "o:thumbnail": null,
+    "o:title": "Carte des arguments",
+    "thumbnail_display_urls": {
+        "large": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/large\/31d6cdee622276003f9ed5bd862bf242f3a1cc6b.jpg",
+        "medium": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/medium\/31d6cdee622276003f9ed5bd862bf242f3a1cc6b.jpg",
+        "square": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/square\/31d6cdee622276003f9ed5bd862bf242f3a1cc6b.jpg"
+    },
+    "o:created": {
+        "@value": "2021-01-29T10:04:31+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:modified": {
+        "@value": "2021-01-29T10:52:26+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:media": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/144",
+        "o:id": 144
+    }, {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/126",
+        "o:id": 126
+    }],
+    "o:item_set": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/item_sets\/96",
+        "o:id": 96
+    }],
+    "o:site": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/sites\/2",
+        "o:id": 2
+    }],
+    "dcterms:title": [{
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "Carte des arguments"
+    }]
+}, {
+    "@context": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api-context",
+    "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/items\/127",
+    "@type": "o:Item",
+    "o:id": 127,
+    "o:is_public": true,
+    "o:owner": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/users\/12",
+        "o:id": 12
+    },
+    "o:resource_class": null,
+    "o:resource_template": null,
+    "o:thumbnail": null,
+    "o:title": null,
+    "thumbnail_display_urls": {
+        "large": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1",
+        "medium": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1",
+        "square": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1"
+    },
+    "o:created": {
+        "@value": "2021-01-29T10:06:06+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:modified": {
+        "@value": "2021-01-29T10:06:06+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:media": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/128",
+        "o:id": 128
+    }],
+    "o:item_set": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/item_sets\/96",
+        "o:id": 96
+    }],
+    "o:site": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/sites\/2",
+        "o:id": 2
+    }]
+}, {
+    "@context": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api-context",
+    "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/items\/129",
+    "@type": "o:Item",
+    "o:id": 129,
+    "o:is_public": true,
+    "o:owner": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/users\/21",
+        "o:id": 21
+    },
+    "o:resource_class": null,
+    "o:resource_template": null,
+    "o:thumbnail": null,
+    "o:title": null,
+    "thumbnail_display_urls": {
+        "large": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1",
+        "medium": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1",
+        "square": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1"
+    },
+    "o:created": {
+        "@value": "2021-01-29T10:07:16+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:modified": {
+        "@value": "2021-01-29T10:07:16+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:media": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/130",
+        "o:id": 130
+    }],
+    "o:item_set": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/item_sets\/96",
+        "o:id": 96
+    }],
+    "o:site": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/sites\/2",
+        "o:id": 2
+    }]
+}, {
+    "@context": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api-context",
+    "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/items\/134",
+    "@type": ["o:Item", "dctype:Image"],
+    "o:id": 134,
+    "o:is_public": true,
+    "o:owner": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/users\/14",
+        "o:id": 14
+    },
+    "o:resource_class": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/resource_classes\/26",
+        "o:id": 26
+    },
+    "o:resource_template": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/resource_templates\/1",
+        "o:id": 1
+    },
+    "o:thumbnail": null,
+    "o:title": "cartographie controverse covid-19",
+    "thumbnail_display_urls": {
+        "large": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/large\/24889fcc05481caab99cffb6c38af7f3079e2f57.jpg",
+        "medium": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/medium\/24889fcc05481caab99cffb6c38af7f3079e2f57.jpg",
+        "square": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/square\/24889fcc05481caab99cffb6c38af7f3079e2f57.jpg"
+    },
+    "o:created": {
+        "@value": "2021-01-29T10:12:16+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:modified": {
+        "@value": "2021-01-29T10:15:00+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:media": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/135",
+        "o:id": 135
+    }],
+    "o:item_set": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/item_sets\/96",
+        "o:id": 96
+    }],
+    "o:site": [],
+    "dcterms:title": [{
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "cartographie controverse covid-19"
+    }],
+    "dcterms:creator": [{
+        "type": "literal",
+        "property_id": 2,
+        "property_label": "Creator",
+        "is_public": true,
+        "@value": "Frimat Alexia"
+    }],
+    "dcterms:date": [{
+        "type": "literal",
+        "property_id": 7,
+        "property_label": "Date",
+        "is_public": true,
+        "@value": "21, janvier 2020"
+    }],
+    "dcterms:description": [{
+        "type": "literal",
+        "property_id": 4,
+        "property_label": "Description",
+        "is_public": true,
+        "@value": "ceci est une repr\u00e9sentation de mani\u00e8re ludique et attractive  portant sur le sujet de data-controverse et covid-19"
+    }],
+    "dcterms:format": [{
+        "type": "literal",
+        "property_id": 9,
+        "property_label": "Format",
+        "is_public": true,
+        "@value": "medium"
+    }],
+    "dcterms:language": [{
+        "type": "literal",
+        "property_id": 12,
+        "property_label": "Language",
+        "is_public": true,
+        "@value": "fran\u00e7ais"
+    }],
+    "dcterms:publisher": [{
+        "type": "literal",
+        "property_id": 5,
+        "property_label": "Publisher",
+        "is_public": true,
+        "@value": "Frimat Alexia"
+    }],
+    "dcterms:subject": [{
+        "type": "literal",
+        "property_id": 3,
+        "property_label": "Subject",
+        "is_public": true,
+        "@value": "covid-19"
+    }]
+}, {
+    "@context": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api-context",
+    "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/items\/137",
+    "@type": "o:Item",
+    "o:id": 137,
+    "o:is_public": true,
+    "o:owner": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/users\/5",
+        "o:id": 5
+    },
+    "o:resource_class": null,
+    "o:resource_template": null,
+    "o:thumbnail": null,
+    "o:title": "Carte mentale RGPD",
+    "thumbnail_display_urls": {
+        "large": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/large\/f9f91d1a20594d0592ab363284a9019118464913.jpg",
+        "medium": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/medium\/f9f91d1a20594d0592ab363284a9019118464913.jpg",
+        "square": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/files\/square\/f9f91d1a20594d0592ab363284a9019118464913.jpg"
+    },
+    "o:created": {
+        "@value": "2021-01-29T10:15:01+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:modified": {
+        "@value": "2021-01-29T10:15:01+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:media": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/138",
+        "o:id": 138
+    }],
+    "o:item_set": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/item_sets\/96",
+        "o:id": 96
+    }],
+    "o:site": [],
+    "dcterms:title": [{
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "Carte mentale RGPD"
+    }]
+}, {
+    "@context": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api-context",
+    "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/items\/139",
+    "@type": "o:Item",
+    "o:id": 139,
+    "o:is_public": true,
+    "o:owner": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/users\/21",
+        "o:id": 21
+    },
+    "o:resource_class": null,
+    "o:resource_template": null,
+    "o:thumbnail": null,
+    "o:title": "Cartographie Hold-up",
+    "thumbnail_display_urls": {
+        "large": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1",
+        "medium": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1",
+        "square": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1"
+    },
+    "o:created": {
+        "@value": "2021-01-29T10:15:25+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:modified": {
+        "@value": "2021-01-29T10:16:14+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:media": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/140",
+        "o:id": 140
+    }],
+    "o:item_set": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/item_sets\/96",
+        "o:id": 96
+    }],
+    "o:site": [],
+    "dcterms:title": [{
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "Cartographie Hold-up"
+    }]
+}, {
+    "@context": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api-context",
+    "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/items\/141",
+    "@type": "o:Item",
+    "o:id": 141,
+    "o:is_public": true,
+    "o:owner": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/users\/20",
+        "o:id": 20
+    },
+    "o:resource_class": null,
+    "o:resource_template": null,
+    "o:thumbnail": null,
+    "o:title": "Cartographie controverse sur le covid: Hold up",
+    "thumbnail_display_urls": {
+        "large": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1",
+        "medium": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1",
+        "square": "\/GSI\/M2\/20-21\/omk\/application\/asset\/thumbnails\/default.png?v=3.0.1"
+    },
+    "o:created": {
+        "@value": "2021-01-29T10:27:00+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:modified": {
+        "@value": "2021-01-29T10:27:00+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:media": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/media\/142",
+        "o:id": 142
+    }],
+    "o:item_set": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/item_sets\/96",
+        "o:id": 96
+    }],
+    "o:site": [],
+    "dcterms:title": [{
+        "type": "literal",
+        "property_id": 1,
+        "property_label": "Title",
+        "is_public": true,
+        "@value": "Cartographie controverse sur le covid: Hold up"
+    }]
+}, {
+    "@context": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api-context",
+    "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/items\/153",
+    "@type": "o:Item",
+    "o:id": 153,
+    "o:is_public": true,
+    "o:owner": {
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/users\/4",
+        "o:id": 4
+    },
+    "o:resource_class": null,
+    "o:resource_template": null,
+    "o:thumbnail": null,
+    "o:title": null,
+    "thumbnail_display_urls": {
+        "large": null,
+        "medium": null,
+        "square": null
+    },
+    "o:created": {
+        "@value": "2021-01-29T10:54:02+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:modified": {
+        "@value": "2021-01-29T10:54:02+00:00",
+        "@type": "http:\/\/www.w3.org\/2001\/XMLSchema#dateTime"
+    },
+    "o:media": [],
+    "o:item_set": [{
+        "@id": "https:\/\/jardindesconnaissances.univ-paris8.fr\/GSI\/M2\/20-21\/omk\/api\/item_sets\/96",
+        "o:id": 96
+    }],
+    "o:site": []
+}]
