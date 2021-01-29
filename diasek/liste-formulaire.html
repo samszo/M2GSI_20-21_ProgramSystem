@@ -28,10 +28,6 @@
         ];
         //écrire la liste dans la console
 
-         //écrire la liste dans la console
-         console.log(listeEtudiants);
-
-
         /*boucler sur les élément de la liste
         listeEtudiants.forEach(d=>{
             //console.log(d);
@@ -60,8 +56,6 @@
     function ajoutLi(d, idListe) {
         var ul = document.getElementById(idListe);
         var liEtu = document.createElement("li");
-        //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
-        var liTxt = document.createTextNode(d['Horodateur']);
         var liTxt = document.createTextNode(d['URL vers votre réseau social préféré ?']
                                             +' '+d['Niveau de préférence de ce réseau social']
                                             +''+d['Quel en est l"utilité ?']+''
@@ -76,8 +70,6 @@
         //var liTxt = document.createTextNode(d['URL vers la cartographie ?']+' = '+d['Qualité esthétique de la cartographie ?']);
         liEtu.appendChild(liTxt);
 
-
-         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
             if(property=='URL vers votre réseau social préféré ? '
