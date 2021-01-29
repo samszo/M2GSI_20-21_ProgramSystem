@@ -93,9 +93,10 @@
             liProp.appendChild(PropTxt);
             ulProp.appendChild(liProp);
         }
-        liEtu.appendChild(ulProp);            
-    }
-if(d.besoins){
+       
+                liEtu.appendChild(ulProp); 
+              
+                                                    if(d.besoins){
             var ulBesoin = document.createElement("ul");
             d.besoins.forEach(b=>{
                 var liBesoin = document.createElement("li");
@@ -106,6 +107,8 @@ if(d.besoins){
             liEtu.appendChild(ulBesoin);            
         }
         ul.appendChild(liEtu);
+    }
+
 
 
     console.log('FIN');
