@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des formulaires</title>
+    <title>Liste du formulaire pratiques informationnelles liés au covid-19</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
 <body>  
 
-    <h1>Liste des formulaires étudiants</h1>
+    <h1> Liste du formulaire pratiques informationnelles liés au covid-19 </h1>
 
     <ul id="listeEtu">
     </ul>
@@ -39,7 +39,7 @@
 
         console.log("récupère le csv");
         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQHni5Lu--I9WKTWGHOJ3_SBRW47sPTvxxRN6FOaGchhMztr4gm3I5C91EJq1CcGOsmfsOfa2f7PfrF/pub?gid=1651539069&single=true&output=csv" ;
-        //urlCSV = "notesM2GSI.csv";
+        //urlCSV = "Pratique informationelles liés au covid-19.csv";
         d3.csv(urlCSV).then(function(data) {
             console.log("csv récupéré");
             console.log(data);
@@ -55,8 +55,9 @@
     function ajoutLi(d, idListe) {
         var ul = document.getElementById(idListe);
         var liEtu = document.createElement("li");
-        var liTxt = document.createTextNode(d['Votre prénom']+' '+d['Votre nom']+' ('+d['Votre compte GitHub']+')');
-        liEtu.appendChild(liTxt);
+        //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
+       var liTxt = document.createTextNode(d['1)Votre genre?']+' '+d['2) Quel est vôtre age?']+' '+d['3) Quel est votre profession?']+' '+d['4) Dans quelle domaine se trouve votre profession/étude']+' '+d['5)Quels types de médias utilisez vous pouvoir vous informez du covid-19?']+' '+d['6)A quelle fréquence tenez-vous au courant des derniers nouvelles liées au covid-19? ( moyennement)']+' '+d['7)Les sujets principaux aux covid -19 que vous aimez consulté?']+' '+d['8)8) Quel types de média faisiez -vous le plus confiance? (listez les du plus pertinent au moins pertinent)']+' '+d
+     liEtu.appendChild(liTxt);
 
         if(d.besoins){
             var ulBesoin = document.createElement("ul");
