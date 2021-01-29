@@ -65,13 +65,14 @@
                 || property=="Pertinence ?"
                 || property=="Analyse ?"
             ){
-            liEtu.appendChild(ulBesoin);            
+            var liProp = document.createElement("li");
+                var PropTxt = document.createTextNode(property+' = '+d[property]);
+                liProp.appendChild(PropTxt);
+                ulProp.appendChild(liProp);
+            }
         }
+        liEtu.appendChild(ulProp);            
 
-        ul.appendChild(liEtu);
-    }
-
-    console.log('FIN');
     </script>
 </body>
 </html>
