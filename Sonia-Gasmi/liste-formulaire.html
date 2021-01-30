@@ -38,7 +38,6 @@
         console.log("récupère le csv");
         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSg7bYLLoBHvC-iNeEv8N_q1fKqgdgQCh-KCUCi06BGJwtEjFCkNHCo_cF74_6HFU2IvvLa8t9jx2DB/pub?gid=730019640&single=true&output=csv" ;
         //urlCSV = "notesM2GSI.csv";
-        //urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQgaDT2x-KZ20bSSrrnHlnGKrUa5OKs25322kfizkaSXx6hUCQ4qXylp7DQk_N0Sqirp6LkqGsDTIb0/pub?gid=638149350&single=true&output=csv";
         d3.csv(urlCSV).then(function(data) {
             console.log("csv récupéré");
             console.log(data);
