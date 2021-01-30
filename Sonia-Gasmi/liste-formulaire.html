@@ -55,7 +55,7 @@
     function ajoutLi(d, idListe) {
         var ul = document.getElementById(idListe);
         var liEtu = document.createElement("li");
-        var liTxt = document.createTextNode(d["Vous êtes :"]+' '+d["Votre âge :"]+' ('+d['Votre dernier diplôme obtenu :']+')');
+        var liTxt = document.createTextNode(d['Vous êtes :']+' '+d['Votre âge :']+' ('+d['Votre dernier diplôme obtenu :']+')');
         liEtu.appendChild(liTxt);
         
               if(d.besoins){
