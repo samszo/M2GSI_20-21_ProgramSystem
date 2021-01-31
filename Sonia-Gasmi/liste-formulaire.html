@@ -38,7 +38,7 @@
 
          console.log("récupère le csv");
          let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSg7bYLLoBHvC-iNeEv8N_q1fKqgdgQCh-KCUCi06BGJwtEjFCkNHCo_cF74_6HFU2IvvLa8t9jx2DB/pub?gid=730019640&single=true&output=csv" ;
-         //urlCSV = "Enquete_sur_les_pratiques_informationnelles_sur_la_covid19_Reponses_au_formulaire_1.csv";
+         //urlCSV = "Etudes_sur_la qualite_des_cours_distance_Reponses_au_formulaire_1.csv";
          d3.csv(urlCSV).then(function(data) {
              console.log("csv récupéré");
              console.log(data);
@@ -61,9 +61,9 @@
         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=="Vous êtes"
-                || property=="Votre âge"
+            if(property=="Votre âge"
                 || property=="Votre dernier diplôme obtenu"
+                || property=="L'intitulé de votre formation en cours "
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
