@@ -37,8 +37,8 @@
 
 
          console.log("récupère le csv");
-         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT3deU779qF_D8fMP6BGWpg-uv1dfv-V7I_gh2fIKjYVSSGYhknrSRq6E4znDrNtAG-li3m8d24bjQa/pub?output=csv" ;
-         //urlCSV = "Habitude_des_etudiants_series_films.csv";
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR4StUbdnp5RGYgrIqva905OZEgsRfRhjpxSeXF_Lt9tcLyEKypujT-ElFXVGbdTBqdZ6hfbeMUqHki/pub?gid=468070184&single=true&output=csv" ;
+         //urlCSV = "Etude sur la  collecte des informations liée au covid pour les étudiants_reponses_au_formulaire.CSV";
          d3.csv(urlCSV).then(function(data) {
              console.log("csv récupéré");
              console.log(data);
@@ -61,9 +61,9 @@
         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=="Âge"
-                || property=="Quel(s) genre(s) cinématographique(s) préférez vous ?"
-                || property=="Dernière série que vous avez regardé "
+            if(property=="Votre nom et prenom"
+                || property=="Quelles sont les sources que vous utilisez lorsque vous cherchez de l’information concernant le covid?"
+                || property=="A quelle fréquence d'utilisation? "
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
