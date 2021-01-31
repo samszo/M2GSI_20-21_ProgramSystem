@@ -55,15 +55,15 @@
          var ul = document.getElementById(idListe);
          var liEtu = document.createElement("li");
          //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
-         var liTxt = document.createTextNode(d['Horodateur']);
+         var liTxt = document.createTextNode(d['Nom Prénom']);
          liEtu.appendChild(liTxt);
 
         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=='Nom Prénom'
-                || property=="Âge"
+            if(property=="Âge"
                 || property=="Quel(s) genre(s) cinématographique(s) préférez vous ?"
+                || property=="Dernière série que vous avez regardé "
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
