@@ -6,13 +6,11 @@
     <title>Liste des formulaires</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
+
 <body>  
-
     <h1>Liste des formulaires étudiants</h1>
-
     <ul id="listeEtu">
     </ul>
-
     <ul id='listeBesoins' >
     </ul> 
     
@@ -26,39 +24,58 @@
             ,{'nom':'toto','github':'totoot'}
             ,{'nom':'Machin truc chouette','github':'totoot'}
         ];
-        //écrire la liste dans la console
-        console.log(listeEtudiants);
+         //écrire la liste dans la console
+         console.log(listeEtudiants);
 
-        /*boucler sur les élément de la liste
-        listeEtudiants.forEach(d=>{
-            //console.log(d);
-            ajoutLi(d,'listeEtu');
-        });
-        */
-
-
-        console.log("récupère le csv");
-        let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT3deU779qF_D8fMP6BGWpg-uv1dfv-V7I_gh2fIKjYVSSGYhknrSRq6E4znDrNtAG-li3m8d24bjQa/pub?output=csv" ;
-        //urlCSV = "notesM2GSI.csv";
-        d3.csv(urlCSV).then(function(data) {
-            console.log("csv récupéré");
-            console.log(data);
-            data.forEach(d=>{
-                //console.log(d);
-                ajoutLi(d,'listeEtu');
-            });
-
-        });
-        console.log("Fait autre chose");
+         //boucler sur les élément de la liste
+         /*boucler sur les élément de la liste
+         listeEtudiants.forEach(d=>{
+             //console.log(d);
+             ajoutLi(d,'listeEtu');
+         });
+         */
 
 
-    function ajoutLi(d, idListe) {
-        var ul = document.getElementById(idListe);
-        var liEtu = document.createElement("li");
-        var liTxt = document.createTextNode(d['Nom Prénom']+' '+d['Âge']+' ('+d['Quel(s) genre(s) cinématographique(s) préférez vous ?']+')');
-        liEtu.appendChild(liTxt);
+         console.log("récupère le csv");
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT3deU779qF_D8fMP6BGWpg-uv1dfv-V7I_gh2fIKjYVSSGYhknrSRq6E4znDrNtAG-li3m8d24bjQa/pub?output=csv" ;
+         //urlCSV = "Etudes_sur_la qualite_des_cours_distance_Reponses_au_formulaire_1.csv";
+         d3.csv(urlCSV).then(function(data) {
+             console.log("csv récupéré");
+             console.log(data);
+             data.forEach(d=>{
+                 //console.log(d);
+                 ajoutLi(d,'listeEtu');
+             });
 
-        if(d.besoins){
+         });
+         console.log("Fait autre chose");
+
+
+     function ajoutLi(d, idListe) {
+         var ul = document.getElementById(idListe);
+         var liEtu = document.createElement("li");
+         //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
+         var liTxt = document.createTextNode(d['Horodateur']);
+         liEtu.appendChild(liTxt);
+
+        ///afficher quelques réponse du formulaire
+        var ulProp = document.createElement("ul");
+        for (const property in d) {
+            if(property=='Nom Prénom'
+                || property=="Âge"
+                || property=="Quel(s) genre(s) cinématographique(s) préférez vous ?"
+            ){
+                var liProp = document.createElement("li");
+                var PropTxt = document.createTextNode(property+' = '+d[property]);
+                liProp.appendChild(PropTxt);
+                ulProp.appendChild(liProp);
+            }
+        }
+        liEtu.appendChild(ulProp);            
+
+
+
+         if(d.besoins){
             var ulBesoin = document.createElement("ul");
             d.besoins.forEach(b=>{
                 var liBesoin = document.createElement("li");
@@ -68,10 +85,8 @@
             })
             liEtu.appendChild(ulBesoin);            
         }
-
         ul.appendChild(liEtu);
     }
-
     console.log('FIN');
     </script>
 </body>
