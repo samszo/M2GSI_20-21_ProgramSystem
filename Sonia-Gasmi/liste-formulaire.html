@@ -6,16 +6,14 @@
     <title>Liste des formulaires</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
+
 <body>  
-    
     <h1>Liste des formulaires étudiants</h1>
-    
     <ul id="listeEtu">
     </ul>
-    
-<ul id='listeBesoins' >
+    <ul id='listeBesoins' >
     </ul> 
-   
+    
     
     <script>
         console.log("DEBUT");
@@ -26,39 +24,58 @@
             ,{'nom':'toto','github':'totoot'}
             ,{'nom':'Machin truc chouette','github':'totoot'}
         ];
-        //écrire la liste dans la console
-        console.log(listeEtudiants);
+         //écrire la liste dans la console
+         console.log(listeEtudiants);
 
-        /*boucler sur les élément de la liste
-        listeEtudiants.forEach(d=>{
-            //console.log(d);
-            ajoutLi(d,'listeEtu');
-        });
-        */
-
-
-        console.log("récupère le csv");
-        let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSg7bYLLoBHvC-iNeEv8N_q1fKqgdgQCh-KCUCi06BGJwtEjFCkNHCo_cF74_6HFU2IvvLa8t9jx2DB/pub?gid=730019640&single=true&output=csv" ;
-        //urlCSV = "notesM2GSI.csv";
-        d3.csv(urlCSV).then(function(data) {
-            console.log("csv récupéré");
-            console.log(data);
-            data.forEach(d=>{
-                //console.log(d);
-                ajoutLi(d,'listeEtu');
-            });
-
-        });
-        console.log("Fait autre chose");
+         //boucler sur les élément de la liste
+         /*boucler sur les élément de la liste
+         listeEtudiants.forEach(d=>{
+             //console.log(d);
+             ajoutLi(d,'listeEtu');
+         });
+         */
 
 
-    function ajoutLi(d, idListe) {
-        var ul = document.getElementById(idListe);
-        var liEtu = document.createElement("li");
-        var liTxt = document.createTextNode(d['Vous êtes']+' '+d['Votre âge']+' ('+d['Votre dernier diplôme obtenu']+')');
-        liEtu.appendChild(liTxt);
-        
-              if(d.besoins){
+         console.log("récupère le csv");
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSg7bYLLoBHvC-iNeEv8N_q1fKqgdgQCh-KCUCi06BGJwtEjFCkNHCo_cF74_6HFU2IvvLa8t9jx2DB/pub?gid=730019640&single=true&output=csv" ;
+         //urlCSV = "Enquete_sur_les_pratiques_informationnelles_sur_la_covid19_Reponses_au_formulaire_1.csv";
+         d3.csv(urlCSV).then(function(data) {
+             console.log("csv récupéré");
+             console.log(data);
+             data.forEach(d=>{
+                 //console.log(d);
+                 ajoutLi(d,'listeEtu');
+             });
+
+         });
+         console.log("Fait autre chose");
+
+
+     function ajoutLi(d, idListe) {
+         var ul = document.getElementById(idListe);
+         var liEtu = document.createElement("li");
+         //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
+         var liTxt = document.createTextNode(d['Vous êtes']);
+         liEtu.appendChild(liTxt);
+
+        ///afficher quelques réponse du formulaire
+        var ulProp = document.createElement("ul");
+        for (const property in d) {
+            if(property=="Vous êtes"
+                || property=="Votre âge"
+                || property=="Votre dernier diplôme obtenu"
+            ){
+                var liProp = document.createElement("li");
+                var PropTxt = document.createTextNode(property+' = '+d[property]);
+                liProp.appendChild(PropTxt);
+                ulProp.appendChild(liProp);
+            }
+        }
+        liEtu.appendChild(ulProp);            
+
+
+
+         if(d.besoins){
             var ulBesoin = document.createElement("ul");
             d.besoins.forEach(b=>{
                 var liBesoin = document.createElement("li");
@@ -68,13 +85,9 @@
             })
             liEtu.appendChild(ulBesoin);            
         }
-
         ul.appendChild(liEtu);
     }
-
     console.log('FIN');
     </script>
 </body>
 </html>
-
-       
