@@ -1,101 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
+<! DOCTYPE html >
+< html  lang = " en " >
+< tête >
+    < meta  charset = " UTF-8 " >
+    < meta  name = " viewport " content = " width = device-width, initial-scale = 1.0 " >
+    < title > Liste des formulaires </ title >
+    < script  src = " https://d3js.org/d3.v6.min.js " > </ script >
+</ tête >
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des formulaires</title>
-    <script src="https://d3js.org/d3.v6.min.js"></script>
-</head>
+< corps >  
+    < h1 > Liste des formulaires étudiants </ h1 >
+    < ul  id = " listeEtu " >
+    </ ul >
+    < ul  id = ' listeBesoins ' >
+    </ ul > 
+    
+    
+    < script >
+        console . log ( "DEBUT" ) ;
+        // création de la liste des étudiants
+        laissez  listeEtudiants = [
+            { 'nom' : 'titi' , "github" : 'Aissatou-Cis' , 'besoins' : [ 'html' , 'javascript' ] }
+            , { 'nom' : 'tata' , 'github' : 'tat' , 'besoins' : [ 'html' , 'css' ] }
+            , { 'nom' : 'toto' , 'github' : 'totoot' }
+            , { 'nom' : 'Machin truc chouette' , 'github' : 'totoot' }
+        ] ;
+         // écrire la liste dans la console
+         console . log ( listeEtudiants ) ;
 
-<body>
-    <h1>Liste des étudiants</h1>
-    <ul id="listeEtu">
-    </ul>
-    <ul id='listeBesoins'>
-    </ul>
-
-
-    <script>
-        console.log("DEBUT");
-        //création de la liste des étudiants
-        let listeEtudiants = [{
-            'nom': 'titi',
-            "github": 'Aissatou-Cis',
-            'besoins': ['html', 'javascript']
-        }, {
-            'nom': 'tata',
-            'github': 'tat',
-            'besoins': ['html', 'css']
-        }, {
-            'nom': 'toto',
-            'github': 'totoot'
-        }, {
-            'nom': 'Machin truc chouette',
-            'github': 'totoot'
-        }];
-        //écrire la liste dans la console
-        console.log(listeEtudiants);
-
-        console.log("récupère le csv");
-        let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR4StUbdnp5RGYgrIqva905OZEgsRfRhjpxSeXF_Lt9tcLyEKypujT-ElFXVGbdTBqdZ6hfbeMUqHki/pub?output=csv";
-
-        d3.csv(urlCSV).then(function (data) {
-            console.log("csv récupéré");
-            console.log(data);
-            data.forEach(d => {
-                console.log(d);
-                ajoutLi(d, 'listeEtu');
-            });
-
-        });
-        console.log("Fait autre chose");
+         // boucler sur les élément de la liste
+         / * boucler sur les élément de la liste
+         listeEtudiants.forEach (d => {
+             //console.log(d);
+             ajoutLi (d, 'listeEtu');
+         });
+         * /
 
 
-        function ajoutLi(d, idListe) {
-            var ul = document.getElementById(idListe);
-            var liEtu = document.createElement("li");
-            var liTxt = document.createTextNode(d['Horodateur']);
-            liEtu.appendChild(liTxt);
-            
-            ///afficher quelques réponses du formulaire
-            var ulProp = document.createElement("ul");
-            for (const property in d) {
-                if (property == 'Votre Nom et Prénom?' ||
-                    property == "Quelles sont les sources que vous utilisez lorsque vous cherchez de l’information concernant le covid?" ||
-                    property == "A quelle fréquence d'utilisation?" ||
-                    property == "Comment évaluez vous les informations recueillies sur vos différentes sources?" ||
-                    property == "Quelles sont vos catégories de sources?" ||
-                    property == "Quelles sont vos critères de sélection des sources d'information?" ||
-                    property == "Utilisez vous un ordinateur ou un smartphone pour recueillir des données ?" ||
-                    property == "la qualité de votre réseau est elle bonne" ||
-                    property == " Combien de temps passez-vous à vous rechercher de l'information chaque jour?" ||
-                    property == "Quel type d’information partagez-vous ou retweetez-vous le plus souvent?" 
-                    
-                ) {
-                    var liProp = document.createElement("li");
-                    var PropTxt = document.createTextNode([property] + '=' +  d[property]);
-                    liProp.appendChild(
-                        PropTxt);
-                    ulProp.appendChild(liProp);
-                }
+         console . log ( "récupère le csv" ) ;
+         laisser  urlCSV  =  "https://docs.google.com/spreadsheets/d/e/2PACX-1vT3deU779qF_D8fMP6BGWpg-uv1dfv-V7I_gh2fIKjYVSSGYhknrSRq6E4znDrNtAG-li3m8d24bjQa/pub?output=csv"  ;
+         // urlCSV = "Habitude_des_etudiants_series_films.csv";
+         d3 . csv ( urlCSV ) . alors ( fonction ( données )  {
+             console . log ( "csvéré" ) ;
+             console . log ( données ) ;
+             données . forEach ( d => {
+                 //console.log(d);
+                 ajoutLi ( d , 'listeEtu' ) ;
+             } ) ;
 
+         } ) ;
+         console . log ( "Fait autre chose" ) ;
+
+
+     function  ajoutLi ( d ,  idListe )  {
+         var  ul  =  document . getElementById ( idListe ) ;
+         var  liEtu  =  document . createElement ( "li" ) ;
+         // var liTxt = document.createTextNode (d.nom + '(' + d.github + ')');
+         var  liTxt  =  document . createTextNode ( d [ 'Nom Prénom' ] ) ;
+         liEtu . appendChild ( liTxt ) ;
+
+        /// afficher quelques réponses du formulaire
+        var  ulProp  =  document . createElement ( "ul" ) ;
+        for  ( propriété const  en d ) {   
+            if ( propriété == "Âge"
+                ||  property == "Quel (s) genre (s) cinématographique (s) préférez vous?"
+                ||  property == "Dernière série que vous avez regardé"
+            ) {
+                var  liProp  =  document . createElement ( "li" ) ;
+                var  PropTxt  =  document . createTextNode ( propriété + '=' + d [ propriété ] ) ;
+                liProp . appendChild ( PropTxt ) ;
+                ulProp . appendChild ( liProp ) ;
             }
-            liEtu.appendChild(ulProp);
-
-            if (d.besoins) {
-                var ulBesoin = document.createElement("ul");
-                d.besoins.forEach(b => {
-                    var liBesoin = document.createElement("li");
-                    var besoinTxt = document.createTextNode(b);
-                    liBesoin.appendChild(besoinTxt);
-                    ulBesoin.appendChild(liBesoin);
-                })
-                liEtu.appendChild(ulBesoin);
-            }
-            ul.appendChild(liEtu);
         }
-        console.log('FIN');
-    </script>
-</body>
-</html>
+        liEtu . appendChild ( ulProp ) ;            
+
+
+
+         if ( d . besoins ) {
+            var  ulBesoin  =  document . createElement ( "ul" ) ;
+            d . besoins . forEach ( b => {
+                var  liBesoin  =  document . createElement ( "li" ) ;
+                var  besoinTxt  =  document . createTextNode ( b ) ;
+                liBesoin . appendChild ( besoinTxt ) ;
+                ulBesoin . appendChild ( liBesoin ) ;
+            } )
+            liEtu . appendChild ( ulBesoin ) ;            
+        }
+        ul . appendChild ( liEtu ) ;
+    }
+    console . log ( 'FIN' ) ;
+    </ script >
+</ corps >
+</ html >
