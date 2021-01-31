@@ -38,7 +38,7 @@
 
          console.log("récupère le csv");
          let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR4StUbdnp5RGYgrIqva905OZEgsRfRhjpxSeXF_Lt9tcLyEKypujT-ElFXVGbdTBqdZ6hfbeMUqHki/pub?gid=468070184&single=true&output=csv" ;
-         //urlCSV = "Etude_sur_la_collecte_des_informations_liée_au_covid_pour_les_étudiants.csv";
+         //urlCSV = "Reponses_au_formulaire_1.csv";
          d3.csv(urlCSV).then(function(data) {
              console.log("csv récupéré");
              console.log(data);
@@ -55,15 +55,15 @@
          var ul = document.getElementById(idListe);
          var liEtu = document.createElement("li");
          //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
-         var liTxt = document.createTextNode(d['Nom Prénom']);
+         var liTxt = document.createTextNode(d['Horodateur']);
          liEtu.appendChild(liTxt);
 
         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=="Votre Nom et Prénom"
-                || property=="Quelles sont les sources que vous utilisez lorsque vous cherchez de l’information concernant le covid?"
-                || property=="A quelle fréquence d'utilisation? "
+            if(property=='Quelles sont les sources que vous utilisez lorsque vous cherchez de l’information concernant le covid ? '
+                || property=="A quelle fréquence d'utilisation ?"
+                || property=="Comment évaluez vous les informations recueillies sur vos différentes sources ?"
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
