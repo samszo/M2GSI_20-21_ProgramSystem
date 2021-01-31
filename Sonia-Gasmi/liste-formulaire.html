@@ -55,7 +55,7 @@
     function ajoutLi(d, idListe) {
         var ul = document.getElementById(idListe);
         var liEtu = document.createElement("li");
-        var liTxt = document.createTextNode(d['Vous êtes :']+' '+d['Votre âge :']+' ('+d['Votre dernier diplôme obtenu :']+')');
+        var liTxt = document.createTextNode(d['À quelle fréquence recherchez-vous des informations pendant la crise sanitaire ? ']+' '+d["Comment jugez-vous la quantité d'information diffusée sur la Covid-19?"]+' ('+d['Sur une échelle de 0 à 5, quel est votre degré de satisfaction?']+')');
         liEtu.appendChild(liTxt);
         
               if(d.besoins){
