@@ -38,7 +38,7 @@
 
          console.log("récupère le csv");
          let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTfpWqmlukHa2WpNLyM-v4Wmd26j84HQFyCeVLviCHDdaIBdVfTB_6sMTnKCU_HcxOt9bBVbacpm7HM/pub?output=csv" ;
-         //urlCSV = "Pratiques_informationnelles liées au Covid 19_Reponses_au_formulaire_1.csv";
+         //urlCSV = "Questionnaire sur les pratiques_informationnelles liées au Covid 19_Reponses_au_formulaire_1.csv";
          d3.csv(urlCSV).then(function(data) {
              console.log("csv récupéré");
              console.log(data);
