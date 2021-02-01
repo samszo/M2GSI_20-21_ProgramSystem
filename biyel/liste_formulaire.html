@@ -38,7 +38,6 @@
 
          console.log("récupère le csv");
          let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS_34RQi24ogWl-TxAg8flTPiAA5KiM9UXYJhHL_OHQmJWbsywvu1-2jmWiWZOStuUg9uAx2muMJGZF/pub?output=csv" ;
-         //urlCSV = "Habitude_des_etudiants_series_films.csv";
          d3.csv(urlCSV).then(function(data) {
              console.log("csv récupéré");
              console.log(data);
