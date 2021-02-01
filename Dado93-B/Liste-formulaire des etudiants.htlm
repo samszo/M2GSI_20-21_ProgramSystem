@@ -37,8 +37,8 @@
 
 
          console.log("récupère le csv");
-         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTfpWqmlukHa2WpNLyM-v4Wmd26j84HQFyCeVLviCHDdaIBdVfTB_6sMTnKCU_HcxOt9bBVbacpm7HM/pub?output=csv" ;
-         //urlCSV = "Questionnaire sur les pratiques_informationnelles liées au Covid 19_Reponses_au_formulaire_1.csv";
+         let urlCSV = "<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR5mhnP9HgkfAlyJi4N59GhyhRfGQ49Ptq1uxMF9SsYzDmKRncDwzmD9YTwooA733An3gBPBPFYxyQ0/pubhtml?widget=true&amp;headers=false"></iframe>" ;
+         //urlCSV = "Questionnaire_sur_les_pratiques_informationnelles_liees_a_la_covid_19.csv";
          d3.csv(urlCSV).then(function(data) {
              console.log("csv récupéré");
              console.log(data);
@@ -55,15 +55,15 @@
          var ul = document.getElementById(idListe);
          var liEtu = document.createElement("li");
          //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
-         var liTxt = document.createTextNode(d['Horodateur']);
+         var liTxt = document.createTextNode(d['Vous êtes ']);
          liEtu.appendChild(liTxt);
 
         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=='Quelles sont vos sources informationnelles durant la crise sanitaire?'
-                || property=="A quelle fréquence consultez vous ces sources?"
-                || property=="Comment jugez vous ces sources?"
+            if(property=="Quel est votre genre"
+                || property=="Quel est votre profession?  "
+                || property=="Residez vous en France? "
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
