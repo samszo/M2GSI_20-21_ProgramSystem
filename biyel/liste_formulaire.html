@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des formulaires</title>
+    <title>réponse des participants</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
 
@@ -37,7 +37,8 @@
 
 
          console.log("récupère le csv");
-         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS_34RQi24ogWl-TxAg8flTPiAA5KiM9UXYJhHL_OHQmJWbsywvu1-2jmWiWZOStuUg9uAx2muMJGZF/pub?output=csv";
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS_34RQi24ogWl-TxAg8flTPiAA5KiM9UXYJhHL_OHQmJWbsywvu1-2jmWiWZOStuUg9uAx2muMJGZF/pub?output=csv" ;
+         //urlCSV = "Habitude_des_etudiants_series_films.csv";
          d3.csv(urlCSV).then(function(data) {
              console.log("csv récupéré");
              console.log(data);
@@ -60,9 +61,9 @@
         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=="Qu'avez-vous pensé de l'organisation de l'événement d'aujourd'hui ?"
-                || property=="Quelles nouvelles choses ou nouveaux concepts avez-vous appris ?"
-                || property=="Qu’avez-vous pensé des contenus proposés ? [Communications par e-mail] "
+            if(property=="Âge"
+                || property=="Qu'avez-vous pensé de l'organisation de l'événement d'aujourd'hui ?"
+                || property=="Quelles nouvelles choses ou nouveaux concepts avez-vous appris ? "
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
