@@ -36,7 +36,9 @@
 
 
         console.log("récupère le csv");
-        let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS_34RQi24ogWl-TxAg8flTPiAA5KiM9UXYJhHL_OHQmJWbsywvu1-2jmWiWZOStuUg9uAx2muMJGZF/pub?output=csv" ;  
+        let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS_34RQi24ogWl-TxAg8flTPiAA5KiM9UXYJhHL_OHQmJWbsywvu1-2jmWiWZOStuUg9uAx2muMJGZF/pub?output=csv" ;
+        //urlCSV = "liste_reponse.csv";
+        //urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQgaDT2x-KZ20bSSrrnHlnGKrUa5OKs25322kfizkaSXx6hUCQ4qXylp7DQk_N0Sqirp6LkqGsDTIb0/pub?gid=638149350&single=true&output=csv";
         d3.csv(urlCSV).then(function(data) {
             console.log("csv récupéré");
             console.log(data);
@@ -83,4 +85,3 @@
     console.log('FIN');
     </script>
 </body>
-</html>
