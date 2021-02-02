@@ -8,7 +8,7 @@
 </head>
 
 <body>  
-    <h1>Liste des formulaires étudiants</h1>
+    <h1>Pratiques informationnelles liés au Covid19</h1>
     <ul id="listeEtu">
     </ul>
     <ul id='listeBesoins' >
@@ -38,7 +38,7 @@
 
          console.log("récupère le csv");
          let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR5mhnP9HgkfAlyJi4N59GhyhRfGQ49Ptq1uxMF9SsYzDmKRncDwzmD9YTwooA733An3gBPBPFYxyQ0/pub?output=csv" ;
-         //urlCSV = "Questionnaire_sur_les_pratiques_informationnelles_liees_au covid_19.csv";
+         //urlCSV = "Questionnaire sur les pratiques informationnelles Reponses_au_formulaire_1.csv";
          d3.csv(urlCSV).then(function(data) {
              console.log("csv récupéré");
              console.log(data);
@@ -55,15 +55,15 @@
          var ul = document.getElementById(idListe);
          var liEtu = document.createElement("li");
          //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
-         var liTxt = document.createTextNode(d['Vous êtes ']);
+         var liTxt = document.createTextNode(d['Horodateur']);
          liEtu.appendChild(liTxt);
 
         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=="Quel est votre genre"
-                || property=="Quel est votre profession?  "
-                || property=="Residez vous en France? "
+            if(property=='Quelles sont vos sources informationnelles liées au Covid? '
+                || property=="A quelle frequence consultez vous vos sources?"
+                || property=="Suggerez vous vos sources d'information à d'autres ?"
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
