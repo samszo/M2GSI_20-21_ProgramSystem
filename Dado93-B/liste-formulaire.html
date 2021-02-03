@@ -61,9 +61,14 @@
         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=='Quelles sont vos sources informationnelles durant la crise sanitaire? '
+            if(property=='Quel est votre genre? '
+               || property=="Quelles sont vos sources informationnelles durant la crise sanitaire?"
                 || property=="A quelle fréquence consultez vous ces sources?"
                 || property=="Est-vous satisfaits des informations obtenues?"
+               || property=="Comment jugez vous ces sources?"
+               || property=="Suggérez vous ces sources à d'autres?"
+               || property=="Sur quel critère choisirez vos sources d'informations?"
+               || property=="La crise sanitaire a -t-elle impacté votre horizon informationnel?"
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
