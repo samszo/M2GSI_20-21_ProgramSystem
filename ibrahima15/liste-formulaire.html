@@ -61,9 +61,9 @@
         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=='Votre Nom et Prénom ? '
+            if(property=='Votre Nom et Prenom ?'
                 || property=="Quelles sont les sources que vous utilisez lorsque vous cherchez de l’information concernant le covid ?"
-                || property=="Comment évaluez vous les informations recueillies sur vos différentes sources ?"
+                || property=="A quelle fréquence d'utilisation ?"
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
