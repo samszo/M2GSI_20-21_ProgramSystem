@@ -37,8 +37,8 @@
 
 
          console.log("récupère le csv");
-         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR5mhnP9HgkfAlyJi4N59GhyhRfGQ49Ptq1uxMF9SsYzDmKRncDwzmD9YTwooA733An3gBPBPFYxyQ0/pub?output=csv" ;
-         //urlCSV = "Questionnaire_sur_les_pratiques_informationnelles_Reponses_au_formulaire_1.csv";
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS3UQxqlM5HFGp_MUcdMUoCr63FwObYi2Pm_zGA9FfdOg0X90WAH3-uR2-BIimuxsX144IJLqKNBTNX/pub?output=csv" ;
+         //urlCSV = "Pratiques_informationnelles_liees_au _covid 19_Reponses_au_formulaire_1.csv";
          d3.csv(urlCSV).then(function(data) {
              console.log("csv récupéré");
              console.log(data);
@@ -61,9 +61,9 @@
         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=='Quelles sont vos sources informationnelles liées au Covid? '
-                || property=="A quelle frequence consultez vous vos sources?"
-                || property=="Suggerez vous vos sources d'information à d'autres ?"
+            if(property=='Quelle est votre situation matrimoniale? '
+                || property=="Vos sources d'information pendant la crise sanitaire liée au COVID19?"
+                || property=="A quel moment de la journée consultez-vous ces sources informationnelles?"
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
