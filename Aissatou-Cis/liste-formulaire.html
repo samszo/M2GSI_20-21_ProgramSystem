@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,96 +24,58 @@
             ,{'nom':'toto','github':'totoot'}
             ,{'nom':'Machin truc chouette','github':'totoot'}
         ];
-        //écrire la liste dans la console
-        console.log(listeEtudiants);
+         //écrire la liste dans la console
+         console.log(listeEtudiants);
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des formulaires</title>
-    <script src="https://d3js.org/d3.v6.min.js"></script>
-</head>
-<body>
-
-    <h1>Liste des formulaires étudiants</h1>
-    <ul id="listeEtu">
-    </ul>
-    <ul id='listeBesoins' >
-    </ul>
+         //boucler sur les élément de la liste
+         /*boucler sur les élément de la liste
+         listeEtudiants.forEach(d=>{
+             //console.log(d);
+             ajoutLi(d,'listeEtu');
+         });
+         */
 
 
-    <script>
-        console.log("DEBUT");
-        //création de la liste des étudiants
-        laisser listeEtudiants = [
-          {'nom':'titi',"github":'Aissatou-Cis','besoins':['html','javascript']}
-            ,{'nom':'tata','github':'tat','besoins':['html','css']}
-            ,{'nom':'toto','github':'totoot'}
-            ,{'nom':'Machin truc chouette','github':'totoot'}
-        ] ;
-        //écrire la liste dans la console
-        console.log (listeEtudiants) ;
-
-        
-        /*boucler sur les élément de la liste
-        listeEtudiants.forEach(d=>{
-            //console.log(d);
-            ajoutLi(d,'listeEtu');
-        });
-        */
-
-
-        console.log("récupère le csv") ;
-        laisser  urlCSV  = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTDH-d3GRyvY3P5OhK6WyfDPRTiUyxwMiH2sGqbEDAOIWbHZdkES3a-jb4C5n7s4EI39teZzUVgQvAg/pub?gid=607852403&single=true&output=csv"
-        //urlcsv = "Formation_en_humanités_numériques_Reponses_au_formulaire.csv";
-       // urlCSV = "<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTDH-d3GRyvY3P5OhK6WyfDPRTiUyxwMiH2sGqbEDAOIWbHZdkES3a-jb4C5n7s4EI39teZzUVgQvAg/pubhtml?widget=true&amp;headers=false"></iframe>";
-       d3.csv(urlCSV).alors(function(données) {
-             console.log("csvéré");
-             console.log(données);
-             données.forEach(d=> {
+         console.log("récupère le csv");
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTDH-d3GRyvY3P5OhK6WyfDPRTiUyxwMiH2sGqbEDAOIWbHZdkES3a-jb4C5n7s4EI39teZzUVgQvAg/pub?gid=607852403&single=true&output=csv" ;
+         //urlCSV = "Formation_en_humanités_numériques.csv";
+         d3.csv(urlCSV).then(function(data) {
+             console.log("csv récupéré");
+             console.log(data);
+             data.forEach(d=>{
                  //console.log(d);
                  ajoutLi(d,'listeEtu');
              });
 
-        });
-        console.log("Fait autre chose");
+         });
+         console.log("Fait autre chose");
 
 
-    function ajoutLi(d, idListe) {
-        var ul = document.getElementById(idListe);
-        var liEtu = document.createElement("li");
-        var liTxt = document.createTextNode(d ['Aissatou Penda']+''+ d ['Cisse'] + '('+ d ['https://github.com/samszo/M2GSI_20-21_ProgramSystem/tree/main/Aissatou-Cis']+')');
-        var liTxt = document.createTextNode( d [ 'Horodateur' ] ) ;
-        liEtu.appendChild(liTxt);
+     function ajoutLi(d, idListe) {
+         var ul = document.getElementById(idListe);
+         var liEtu = document.createElement("li");
+         //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
+         var liTxt = document.createTextNode(d['Horodateur']);
+         liEtu.appendChild(liTxt);
 
-        ///afficher quelques réponses du formulaire
-        var  ulLien  =  document . createElement ( "ul" ) ;
-        var  ulLien  =  document . createElement ( "li" ) ;
-        var  urlLien  =  "https://samszo.github.io/M2GSI_20-21_ProgramSystem/" + d [ 'Votre compte GitHub' ] ;
-        liLien . innerHTML  =  '<a href="' + urlLien +'/formulaire.html' +'"> privilège vers le formulaire </a>' ;
-        ulLien . appendChild ( liLien ) ;
-        liLien  =  document . createElement ( "li" ) ;
-        liLien . innerHTML  =  '<a href="' + urlLien +'/liste-formulaire.html' +'"> link to les Réponses </a>' ;
-        ulLien . appendChild ( liLien ) ;
-        liEtu . appendChild ( ulLien ) ; 
-        for  ( propriété const  en d ) {
-            if(property == "Donnez votre définition par rapport aux humanités numériques?"
-                 property == "Dans quelle ville se trouve votre établissement?"//
-                 property == "Dans quelle ville se trouve votre établissement?"//
-                 property == "Quels outils numériques utilisez-vous: plusieurs choix possibles?"//
-            ) }
-                varliProp = document . createElement ("li");
-                var PropTxt = document . createTextNode (propriété + '=' + d [ propriété] );
-                liProp.appendChild (PropTxt) ;
-                ulProp. appendChild (liprod);
+        ///afficher quelques réponse du formulaire
+        var ulProp = document.createElement("ul");
+        for (const property in d) {
+            if(property=='Donnez votre définition par rapport aux humanités numériques?'
+                || property=='Dans quelle ville se trouve votre établissement?'
+                || property=='Quels outils numériques utilisez-vous: plusieurs choix possibles?'
+            ){
+                var liProp = document.createElement("li");
+                var PropTxt = document.createTextNode(property+' = '+d[property]);
+                liProp.appendChild(PropTxt);
+                ulProp.appendChild(liProp);
             }
         }
-            liEtu. appendChild (ulProp);
+        liEtu.appendChild(ulProp);            
 
 
-            if ( d . besoins ) {
+
+         if(d.besoins){
             var ulBesoin = document.createElement("ul");
             d.besoins.forEach(b=>{
                 var liBesoin = document.createElement("li");
@@ -121,7 +83,7 @@
                 liBesoin.appendChild(besoinTxt);
                 ulBesoin.appendChild(liBesoin);
             })
-            liEtu.appendChild(ulBesoin);
+            liEtu.appendChild(ulBesoin);            
         }
         ul.appendChild(liEtu);
     }
