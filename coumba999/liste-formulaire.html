@@ -61,9 +61,9 @@
         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=='Description ? '
-                || property=="Pertinence ?"
-                || property=="Carte ?"
+            if(property=='Suivez-vous des cours en ligne depuis la fin du deuxième confinement ? '
+                || property=="Êtes-vous équipé d'outils numériques suffisants pour suivre vos cours en ligne et faire vos devoirs ?"
+                || property=="Depuis le début de cette pandémie, à quand remonte la dernière fois que vous n'avez pas rendu votre devoir à l'heure ?"
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
