@@ -37,8 +37,8 @@
 
 
          console.log("récupère le csv");
-         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRWs7URlQ3Kt--hZikqHOsc0cBKtcVoDcse1i1_-JPjxPSySTSlabs22dROGf4fGxShgnYUpWzhsEPn/pub?output=csv" ;
-         //urlCSV = "Liste des étudiant.csv";
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRWs7URlQ3Kt--hZikqHOsc0cBKtcVoDcse1i1_-JPjxPSySTSlabs22dROGf4fGxShgnYUpWzhsEPn/pub?gid=1181958896&single=true&output=csv" ;
+         //urlCSV = "Liste_des_étudiant.csv";
          d3.csv(urlCSV).then(function(data) {
              console.log("csv récupéré");
              console.log(data);
