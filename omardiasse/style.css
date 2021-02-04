@@ -1,61 +1,67 @@
 table,
 td {
-    bordure: 1px solide # 333;
-    alignement vertical: haut;
+    border: 1px solid #333;
+    vertical-align: top;
 }
 
-la tête,
+thead,
 tfoot {
-    couleur d'arrière-plan: # 333;
-    couleur: #fff;
+    background-color: #333;
+    color: #fff;
 }
 
 h2 {
-    Couleur blanche;
-    text-align: centre;
+    color: white;
+    text-align: center;
 }
 li {
-    couleur: rgb (164, 129, 129);
+    color: rgb(164, 129, 129);
 }
-.forme {
-    couleur: rgb (18, 201, 49);
+.form {
+    color: rgb(18, 201, 49);
 }
 .reponse {
-    couleur: rgb (236, 139, 12);
+    color: rgb(236, 139, 12);
 }
 #frmForm {
-    couleur d'arrière-plan: rgb (30, 126, 190);
+    background-color: rgb(30, 126, 190);
 }
 #frmRep {
-    couleur de fond: rgb (101, 86, 187);
+    background-color: rgb(101, 86, 187);
 }
 .ifr {
-    hauteur: 600px;
-    largeur: 600px;
+    height: 600px;
+    width: 600px;
 }
+
+#listeGauche {
+    height: 600px;
+    overflow: scroll;
+}
+
 .styled {
-    bordure: 0;
-    hauteur de ligne: 2,5;
-    rembourrage: 0 20px;
-    taille de la police: 1rem;
-    text-align: centre;
-    couleur: #fff;
-    ombre de texte: 1px 1px 1px # 000;
-    rayon de la bordure: 10px;
-    couleur de fond: rgba (220, 0, 0, 1);
-    background-image: linear-gradient (en haut à gauche,
-                                      rgba (0, 0, 0, .2),
-                                      rgba (0, 0, 0, .2) 30%,
-                                      rgba (0, 0, 0, 0));
-    boîte-ombre: encart 2px 2px 3px rgba (255, 255, 255, .6),
-                encart -2px -2px 3px rgba (0, 0, 0, .6);
+	box-shadow: 0px 10px 14px -7px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+    font-weight:bold;
+    margin: 3px;
+    /*
+    padding:13px 32px;
+	font-size:20px;
+    */
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
 }
-
-.styled: hover {
-    couleur de fond: rgba (255, 0, 0, 1);
+.styled:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
 }
-
-.styled: active {
-    boîte-ombre: encart -2px -2px 3px rgba (255, 255, 255, .6),
-                encart 2px 2px 3px rgba (0, 0, 0, .6);
+.styled:active {
+	position:relative;
+	top:1px;
 }
