@@ -38,7 +38,7 @@
 
 
         console.log("récupère le csv");
-        let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQHni5Lu--I9WKTWGHOJ3_SBRW47sPTvxxRN6FOaGchhMztr4gm3I5C91EJq1CcGOsmfsOfa2f7PfrF/pub?gid=1651539069&single=true&output=csv" ;
+        let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRWs7URlQ3Kt--hZikqHOsc0cBKtcVoDcse1i1_-JPjxPSySTSlabs22dROGf4fGxShgnYUpWzhsEPn/pub?gid=1181958896&single=true&output=csv" ;
         //urlCSV = "Pratique informationelles liés au covid-19.csv";
         d3.csv(urlCSV).then(function(data) {
             console.log("csv récupéré");
@@ -56,13 +56,28 @@
         var ul = document.getElementById(idListe);
         var liEtu = document.createElement("li");
         //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
-       var liTxt = document.createTextNode(d['1)Votre genre?']+' '+d['2) Quel est vôtre age?']+' '+d['3) Quel est votre profession?']+' '+d['4) Dans quelle domaine se trouve votre profession/étude']+' '+d['5)Quels types de médias utilisez vous pour pouvoir vous informez du covid-19?']+' '+d['6)A quelle fréquence tenez-vous au courant des derniers nouvelles liées au covid-19? ( moyennement)']+' '+d['7)Les sujets principaux aux covid -19 que vous aimez consulté?']+' '+d['8) Quels types de média faisiez -vous le plus confiance? (listez les du plus pertinent au moins pertinent)']+' '+d['9) Quelles sont vos critères de pertinence?']+' '+d['10) Vous basez-vous sur une ou plusieurs sources?']+' '+d['11) Comment faites-vous la différence entre une information vraie et fausse?']+' '+d['12) Le confinement a t-il modifié votre méthode de recherche d information?']
-                                           
-                                           
-                                          
-     liEtu.appendChild(liTxt);
+       var liTxt = document.createTextNode(d['1) Votre genre?']+' '+d['2) Quel est vôtre age?']+' '+d["3) Quel est vôtre profession?"]+' ('+d["4) Dans quelle domaine se trouve votre profession/étude"]+' ('+d["5)Quels types de médias utilisez vous pour pouvoir vous informez du covid-19?"]+' ('+d["6)A quelle fréquence tenez-vous au courant des derniers nouvelles liées au covid-19? ( moyennement)"]+' ('+d["7)Les sujets principaux aux covid -19 que vous aimez consulté?"]+' ('+d["8) Quels types de média faisiez -vous le plus confiance? (listez les du plus pertinent au moins pertinent)"]+' ('+d["9) Quelles sont vos critères de pertinence?"]+' ('+d["10) Vous basez-vous sur une ou plusieurs sources?"]+' ('+d["11) Comment faites-vous la différence entre une information vraie et fausse?"]+' ('+d["12) Le confinement a t-il modifié votre méthode de recherche d'information?"]+')');
+       var liTxt = document.createTextNode(d['Horodateur']);                                   
+       liEtu.appendChild(liTxt);
 
-        if(d.besoins){
+        ///afficher quelques réponse du formulaire
+        var ulProp = document.createElement("ul");
+        for (const property in d) {
+             if(property=='1) Votre genre?'
+                || property=="2) Quel est vôtre age?"
+                || property=="3) Quel est votre profession?"
+            ){
+                var liProp = document.createElement("li");
+                var PropTxt = document.createTextNode(property+' = '+d[property]);
+                liProp.appendChild(PropTxt);
+                ulProp.appendChild(liProp);
+            }
+        }
+        liEtu.appendChild(ulProp);            
+
+
+
+         if(d.besoins){
             var ulBesoin = document.createElement("ul");
             d.besoins.forEach(b=>{
                 var liBesoin = document.createElement("li");
@@ -72,10 +87,8 @@
             })
             liEtu.appendChild(ulBesoin);            
         }
-
         ul.appendChild(liEtu);
     }
-
     console.log('FIN');
     </script>
 </body>
