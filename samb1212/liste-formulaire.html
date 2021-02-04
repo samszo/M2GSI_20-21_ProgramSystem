@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des formulaires</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body>  
+    <h1>Liste des formulaires étudiants</h1>
+    <ul id="listeEtu">
+    </ul>
+    <ul id='listeBesoins' >
+    </ul> 
+    
+    
+    <script>
+        console.log("DEBUT");
+        //création de la liste des étudiants
+        let listeEtudiants=[
+            {'nom':'titi',"github":'Aissatou-Cis','besoins':['html','javascript']}
+            ,{'nom':'tata','github':'tat','besoins':['html','css']}
+            ,{'nom':'toto','github':'totoot'}
+            ,{'nom':'Machin truc chouette','github':'totoot'}
+        ];
+         //écrire la liste dans la console
+         console.log(listeEtudiants);
+         //boucler sur les élément de la liste
+         /*boucler sur les élément de la liste
+         listeEtudiants.forEach(d=>{
+             //console.log(d);
+             ajoutLi(d,'listeEtu');
+         });
+         */
+         console.log("récupère le csv");
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQM30pjE5G0-hrGDcgQ4sxdpu1csh_7bs1Ga8yI1nrp1-ci2am_TwL5JdqjkJZrj30PUcY-kGP4tVOq/pub?gid=1829490545&single=true&output=csv" ;
+         //urlCSV = "Evaluation_des_cartographies_de_controverses_Reponses_au_formulaire_1.csv";
+         d3.csv(urlCSV).then(function(data) {
+             console.log("csv récupéré");
+             console.log(data);
+             data.forEach(d=>{
+                 //console.log(d);
+                 ajoutLi(d,'listeEtu');
+             });
+         });
+         console.log("Fait autre chose");
+     function ajoutLi(d, idListe) {
+         var ul = document.getElementById(idListe);
+         var liEtu = document.createElement("li");
+         //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
+         var liTxt = document.createTextNode(d['Horodateur']);
+         liEtu.appendChild(liTxt);
+        ///afficher quelques réponse du formulaire
+        var ulProp = document.createElement("ul");
+        for (const property in d) {
+            if(property=='connaissez vous les outils de cartographies de controverses? '
+               || property=="Pour quelles raisons vous utilisez ces outils?"
+                || property=="Connaissez vous des outils de cartographie des connaissances"
+                || property=="Le quel de ces outils vous utilisez le plus"
+               || property=="Quelle est votre niveau connaissance pour ces outils cités?"
+               || property=="savez vous décrire  les cartographies de controverses?"
+               || property=="Avez vous l'habitude manipuler les outils de cartographie de controverses"
+               || property=="quel est l'intérêt de ces outils pour le gestionnaire de l'information? "
+         
+     
+            ){
+                var liProp = document.createElement("li");
+                var PropTxt = document.createTextNode(property+' = '+d[property]);
+                liProp.appendChild(PropTxt);
+                ulProp.appendChild(liProp);
+            }
+        }
+        liEtu.appendChild(ulProp);            
+         if(d.besoins){
+            var ulBesoin = document.createElement("ul");
+            d.besoins.forEach(b=>{
+                var liBesoin = document.createElement("li");
+                var besoinTxt = document.createTextNode(b);
+                liBesoin.appendChild(besoinTxt);
+                ulBesoin.appendChild(liBesoin);
+            })
+            liEtu.appendChild(ulBesoin);            
+        }
+        ul.appendChild(liEtu);
+    }
+    console.log('FIN');
+    </script>
+</body>
+</html>
