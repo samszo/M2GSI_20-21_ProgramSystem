@@ -6,7 +6,7 @@
     <title>Liste des formulaires</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
-    
+
 <body>  
     <h1>Liste des formulaires étudiants</h1>
     <ul id="listeEtu">
@@ -24,58 +24,58 @@
             ,{'nom':'toto','github':'totoot'}
             ,{'nom':'Machin truc chouette','github':'totoot'}
         ];
-        //écrire la liste dans la console
-        console.log(listeEtudiants);
+         //écrire la liste dans la console
+         console.log(listeEtudiants);
 
-        //*boucler sur les élément de la liste
-        /*boucler sur les élément de la liste
-        listeEtudiants.forEach(d=>{
-            //console.log(d);
-            ajoutLi(d,'listeEtu');
-        });
-        */
+         //boucler sur les élément de la liste
+         /*boucler sur les élément de la liste
+         listeEtudiants.forEach(d=>{
+             //console.log(d);
+             ajoutLi(d,'listeEtu');
+         });
+         */
 
- 
-        console.log("récupère le csv");
-        let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTlzShq-zEcdLIwJx1Us9OI-K6EwNyjyMbb91E0HETnakFh4zghG0BuLOL0BVWvhRWs3eGBCLz1cgp/pub?output=csv" ;
-        //urlCSV = "Evaluation de cartographie des controverses _ Coumba Ndaw - Réponses au formulaire 1 (2).csv";
-        d3.csv(urlCSV).then(function(data) {
-            console.log("csv récupéré");
-            console.log(data);
-            data.forEach(d=>{
-                //console.log(d);
-                ajoutLi(d,'listeEtu');
-            });
 
-        });
-        console.log("Fait autre chose");
-      
-    function ajoutLi(d, idListe) {
-        var ul = document.getElementById(idListe);
-        var liEtu = document.createElement("li");
-        var liTxt = document.createTextNode(d['Notation']+''+d['Idées principales']+' ('+d['Apréciation personnelle']+')');
-        liEtu.appendChild(liTxt);
+         console.log("récupère le csv");
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTlzShq-zEcdLIwJx1Us9OI-K6EwNyjyMbb91E0HETnakFh4zghG0BuLOL0BVWvhRWs3eGBCLz1cgp/pub?output=csv" ;
+         //urlCSV = "Evaluation de cartographie des controverses _ Coumba Ndaw - Réponses au formulaire 1 (2).csv";
+         d3.csv(urlCSV).then(function(data) {
+             console.log("csv récupéré");
+             console.log(data);
+             data.forEach(d=>{
+                 //console.log(d);
+                 ajoutLi(d,'listeEtu');
+             });
 
-        if(d.besoins){
-            var ulBesoin = document.createElement("ul");
-           ///afficher quelques réponse du formulaire
+         });
+         console.log("Fait autre chose");
+
+
+     function ajoutLi(d, idListe) {
+         var ul = document.getElementById(idListe);
+         var liEtu = document.createElement("li");
+         //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
+         var liTxt = document.createTextNode(d['Horodateur']);
+         liEtu.appendChild(liTxt);
+
+        ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=='Carte ? '
+            if(property=='Description ? '
                 || property=="Pertinence ?"
-                || property=="Analyse ?"
+                || property=="Carte ?"
             ){
-            var liProp = document.createElement("li");
+                var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
                 liProp.appendChild(PropTxt);
                 ulProp.appendChild(liProp);
             }
         }
-        liEtu.appendChild(ulProp); 
-            
-            
-            
-             if(d.besoins){
+        liEtu.appendChild(ulProp);            
+
+
+
+         if(d.besoins){
             var ulBesoin = document.createElement("ul");
             d.besoins.forEach(b=>{
                 var liBesoin = document.createElement("li");
