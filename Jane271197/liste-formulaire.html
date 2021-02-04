@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des formulaires</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+
+<body>  
+    <h1>Liste des formulaires étudiants</h1>
+    <ul id="listeEtu">
+    </ul>
+    <ul id='listeBesoins' >
+    </ul> 
+    
+    
+    <script>
+        console.log("DEBUT");
+        //création de la liste des étudiants
+        let listeEtudiants=[
+            {'nom':'titi',"github":'Aissatou-Cis','besoins':['html','javascript']}
+            ,{'nom':'tata','github':'tat','besoins':['html','css']}
+            ,{'nom':'toto','github':'totoot'}
+            ,{'nom':'Machin truc chouette','github':'totoot'}
+        ];
+         //écrire la liste dans la console
+         console.log(listeEtudiants);
+
+         //boucler sur les élément de la liste
+         /*boucler sur les élément de la liste
+         listeEtudiants.forEach(d=>{
+             //console.log(d);
+             ajoutLi(d,'listeEtu');
+         });
+         */
+
+
+         console.log("récupère le csv");
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQawxARz1SMhezOWb_cybkk9RpoBe6CsZ2XvI1OQ5tALSVe0WsVE4WpALpnhSHktMQjvlDGPT2vDkSp/pub?gid=8000355&single=true&output=csv" ;
+         //urlCSV = "Pratiques_informationnelles_liees_au _covid 19_Reponses_au_formulaire_1.csv";
+         d3.csv(urlCSV).then(function(data) {
+             console.log("csv récupéré");
+             console.log(data);
+             data.forEach(d=>{
+                 //console.log(d);
+                 ajoutLi(d,'listeEtu');
+             });
+
+         });
+         console.log("Fait autre chose");
+
+
+     function ajoutLi(d, idListe) {
+         var ul = document.getElementById(idListe);
+         var liEtu = document.createElement("li");
+         //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
+         var liTxt = document.createTextNode(d['Horodateur']);
+         liEtu.appendChild(liTxt);
+
+        ///afficher quelques réponse du formulaire
+        var ulProp = document.createElement("ul");
+        for (const property in d) {
+            if(property=="Comment vous êtes vous inscrits en GSI?"
+               || property=="Est-ce-que la formation correspond à votre désir professionnel? "
+                || property=="Est-ce-que la formation correspond à votre désir professionnel? "
+                || property=="Pensez vous que les chose que vous avez appris lors de votre formation vont vous servir dans le monde professionnel?"
+               || property=="Comment avez vous trouver les cours?"
+               || property=="Les cours en ligne ont-ils été favorable à l'apprentissage?"
+               || property=="Avez vous trouve un stage?"
+               || property=="Si vous avez déjà eu l'occasion d'effectuer un stage, les connaissances acquise en GSI vous ont ils été utile?"
+               || property=="Pensez que les matière de GSI correspondent à votre orientation professionnel?"
+               || property=="Pensez vous que votre diplôme est valoriser dans le monde professionnel?"
+            ){
+                var liProp = document.createElement("li");
+                var PropTxt = document.createTextNode(property+' = '+d[property]);
+                liProp.appendChild(PropTxt);
+                ulProp.appendChild(liProp);
+            }
+        }
+        liEtu.appendChild(ulProp);            
+
+
+
+         if(d.besoins){
+            var ulBesoin = document.createElement("ul");
+            d.besoins.forEach(b=>{
+                var liBesoin = document.createElement("li");
+                var besoinTxt = document.createTextNode(b);
+                liBesoin.appendChild(besoinTxt);
+                ulBesoin.appendChild(liBesoin);
+            })
+            liEtu.appendChild(ulBesoin);            
+        }
+        ul.appendChild(liEtu);
+    }
+    console.log('FIN');
+    </script>
+</body>
+</html>
