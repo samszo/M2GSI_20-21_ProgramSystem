@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,8 +37,8 @@
 
 
          console.log("récupère le csv");
-         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTDH-d3GRyvY3P5OhK6WyfDPRTiUyxwMiH2sGqbEDAOIWbHZdkES3a-jb4C5n7s4EI39teZzUVgQvAg/pub?gid=607852403&single=true&output=csv" ;
-         //urlCSV = "Formation_en_humanités_numériques.csv";
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRWs7URlQ3Kt--hZikqHOsc0cBKtcVoDcse1i1_-JPjxPSySTSlabs22dROGf4fGxShgnYUpWzhsEPn/pub?gid=1181958896&single=true&output=csv" ;
+         //urlCSV = "Pratiques_informationnelles_liees_au _covid 19_Reponses_au_formulaire_1.csv";
          d3.csv(urlCSV).then(function(data) {
              console.log("csv récupéré");
              console.log(data);
@@ -61,9 +61,14 @@
         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=='Donnez votre définition par rapport aux humanités numériques?'
-                || property=='Dans quelle ville se trouve votre établissement?'
-                || property=='Quels outils numériques utilisez-vous: plusieurs choix possibles?'
+            if(property=='1) Votre genre?'
+               || property=="2) Quel est vôtre age?"
+                || property=="3) Quel est votre profession?"
+                || property=="4) Dans quelle domaine se trouve votre profession/ étude?"
+               || property=="5) Quels types de médias utilisez vous pour pouvoir vous informez du covid-19?"
+               || property=="6) A quelle fréquence tenez-vous au courant des derniers nouvelles liées au covid-19?( moyennement"
+               || property=="7) Les sujets principaux aux covid -19 que vous aimez consulté?"
+               || property=="8) Quels types de média faisiez -vous le plus confiance? (listez les du plus pertinent au moins pertinent)"
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
