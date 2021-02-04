@@ -38,7 +38,7 @@
 
          console.log("récupère le csv");
          let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTlzShq-zEcdLIwJx1Us9OI-K6EwNyjyMbb91E0HETnakFh4zghG0BuLOL0BVWvhRWs3eGBCLz1cgp/pub?output=csv" ;
-         //urlCSV = "Evaluation de cartographie des controverses _ Coumba Ndaw - Réponses au formulaire 1 (2).csv";
+         //urlCSV = "Evaluation_de_cartographie_de_controverse_Coumba Ndaw_Reponses_au_formulaire_1.csv";
          d3.csv(urlCSV).then(function(data) {
              console.log("csv récupéré");
              console.log(data);
@@ -61,9 +61,14 @@
         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=='Suivez-vous des cours en ligne depuis la fin du deuxième confinement ? '
-                || property=="Êtes-vous équipé d'outils numériques suffisants pour suivre vos cours en ligne et faire vos devoirs ?"
-                || property=="Depuis le début de cette pandémie, à quand remonte la dernière fois que vous n'avez pas rendu votre devoir à l'heure ?"
+            if(property=='1) Carte'
+               || property=="2) Design"
+                || property=="3) Notation"
+                || property=="4) Pertinence"
+               || property=="5) Description"
+               || property=="6) Idées principales( moyennement"
+               || property=="7) Idées secondaires"
+               || property=="8) Analyse? (listez les du plus pertinent au moins pertinent)"
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
