@@ -56,16 +56,25 @@
         var ul = document.getElementById(idListe);
         var liEtu = document.createElement("li");
         //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
-       var liTxt = document.createTextNode(d['1) Votre genre?']+' '+d['2) Quel est vôtre age?']+' '+d["3) Quel est vôtre profession?"]+' ('+d["4) Dans quelle domaine se trouve votre profession/étude"]+' ('+d["5)Quels types de médias utilisez vous pour pouvoir vous informez du covid-19?"]+' ('+d["6)A quelle fréquence tenez-vous au courant des derniers nouvelles liées au covid-19? ( moyennement)"]+' ('+d["7)Les sujets principaux aux covid -19 que vous aimez consulté?"]+' ('+d["8) Quels types de média faisiez -vous le plus confiance? (listez les du plus pertinent au moins pertinent)"]+' ('+d["9) Quelles sont vos critères de pertinence?"]+' ('+d["10) Vous basez-vous sur une ou plusieurs sources?"]+' ('+d["11) Comment faites-vous la différence entre une information vraie et fausse?"]+' ('+d["12) Le confinement a t-il modifié votre méthode de recherche d'information?"]+')');
+       var liTxt = document.createTextNode(d['1) Votre genre?']+' '+d['2) Quel est vôtre age?']+' '+d["3) Quel est vôtre profession?"]+' ('+d["4) Dans quelle domaine se trouve votre profession/étude"]+' ('+d["5) Quels types de médias utilisez vous pour pouvoir vous informez du covid-19?"]+' ('+d["6) A quelle fréquence tenez-vous au courant des derniers nouvelles liées au covid-19? ( moyennement)"]+' ('+d["7) Les sujets principaux aux covid -19 que vous aimez consulté?"]+' ('+d["8) Quels types de média faisiez -vous le plus confiance? (listez les du plus pertinent au moins pertinent)"]+' ('+d["9) Quelles sont vos critères de pertinence?"]+' ('+d["10) Vous basez-vous sur une ou plusieurs sources?"]+' ('+d["11) Comment faites-vous la différence entre une information vraie et fausse?"]+' ('+d["12) Le confinement a t-il modifié votre méthode de recherche d'information?"]+')');
        var liTxt = document.createTextNode(d['Horodateur']);                                   
        liEtu.appendChild(liTxt);
 
-        ///afficher quelques réponse du formulaire
+        ///afficher quelques réponses du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
              if(property=='1) Votre genre?'
                 || property=="2) Quel est vôtre age?"
                 || property=="3) Quel est votre profession?"
+                || property=="4) Dans quelle domaine se trouve votre profession/étude?"
+                || property=="5) Quels types de médias utilisez vous pour pouvoir vous informez du covid-19?"
+                || property=="6) A quelle fréquence tenez_vous au courant des derniers nouvelles liés au covid-19?"
+                || property=="7) Les sujets principaux aux covid -19 que vous aimez consulté? ?"
+                || property=="8) Quels types de média faisiez -vous le plus confiance? (listez les du plus pertinent au moins pertinent)
+                || property=="9) Quelles sont vos critères de pertinence?"
+                || property=="10) Vous basez vous sur une ou plusieurs sources?"
+                || property=="11) Comment faites-vous la différence entre une information vraie et fausse?"
+                || property=="12) Le confinement a t-il modifié votre méthode de recherche d information?"
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
