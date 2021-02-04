@@ -52,11 +52,14 @@
         console.log("Fait autre chose");
 
 
-    function ajoutLi(d, idListe) {
+     function ajoutLi(d, idListe) {
         var ul = document.getElementById(idListe);
         var liEtu = document.createElement("li");
         //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
-       var liTxt = document.createTextNode(d['1)Votre genre?']+' '+d['2) Quel est vôtre age?']+' '+d['3) Quel est votre profession?']+' '+d['4) Dans quelle domaine se trouve votre profession/étude']+' '+d['5)Quels types de médias utilisez vous pouvoir vous informez du covid-19?']+' '+d['6)A quelle fréquence tenez-vous au courant des derniers nouvelles liées au covid-19? ( moyennement)']+' '+d['7)Les sujets principaux aux covid -19 que vous aimez consulté?']+' '+d['8)8) Quel types de média faisiez -vous le plus confiance? (listez les du plus pertinent au moins pertinent)']+' '+d
+       var liTxt = document.createTextNode(d['1)Votre genre?']+' '+d['2) Quel est vôtre age?']+' '+d['3) Quel est votre profession?']+' '+d['4) Dans quelle domaine se trouve votre profession/étude']+' '+d['5)Quels types de médias utilisez vous pour pouvoir vous informez du covid-19?']+' '+d['6)A quelle fréquence tenez-vous au courant des derniers nouvelles liées au covid-19? ( moyennement)']+' '+d['7)Les sujets principaux aux covid -19 que vous aimez consulté?']+' '+d['8) Quels types de média faisiez -vous le plus confiance? (listez les du plus pertinent au moins pertinent)']+' '+d['9) Quelles sont vos critères de pertinence?']+' '+d['10) Vous basez-vous sur une ou plusieurs sources?']+' '+d['11) Comment faites-vous la différence entre une information vraie et fausse?']+' '+d['12) Le confinement a t-il modifié votre méthode de recherche d information?']
+                                           
+                                           
+                                          
      liEtu.appendChild(liTxt);
 
         if(d.besoins){
