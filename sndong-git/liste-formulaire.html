@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des formulaires</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
-
 </head>
-<body>  
-    
 
-    <h1>Liste des étudiants</h1>
+<body>  
+    <h1>Liste des formulaires étudiants</h1>
     <ul id="listeEtu">
     </ul>
+    <ul id='listeBesoins' >
+    </ul> 
     
     
     <script>
@@ -24,64 +24,74 @@
             ,{'nom':'toto','github':'totoot'}
             ,{'nom':'Machin truc chouette','github':'totoot'}
         ];
-        //écrire la liste dans la console
-        console.log(listeEtudiants);
+         //écrire la liste dans la console
+         console.log(listeEtudiants);
 
-        /*boucler sur les élément de la liste
-        listeEtudiants.forEach(d=>{
-            //console.log(d);
-            ajoutLi(d,'listeEtu');
-        });
-        */
-
-
-        console.log("récupère le csv");
-        let urlCSV = "https://docs.google.com/forms/d/e/1FAIpQLSfumI6mpEmXgv9NjqIDjfxehsKerCswdfnbaJlB8RKuQayCsw/viewform?usp=sf_link" ;
-        //urlCSV = "notesM2GSI.csv";
-        //urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQgaDT2x-KZ20bSSrrnHlnGKrUa5OKs25322kfizkaSXx6hUCQ4qXylp7DQk_N0Sqirp6LkqGsDTIb0/pub?gid=638149350&single=true&output=csv";
-        d3.csv(urlCSV).then(function(data) {
-            console.log("csv récupéré");
-            console.log(data);
-            data.forEach(d=>{
-                //console.log(d);
-                ajoutLi(d,'listeEtu');
-            });
-
-        });
-        console.log("Fait autre chose");
+         //boucler sur les élément de la liste
+         /*boucler sur les élément de la liste
+         listeEtudiants.forEach(d=>{
+             //console.log(d);
+             ajoutLi(d,'listeEtu');
+         });
+         */
 
 
-    function ajoutLi(d, idListe) {
-        var ul = document.getElementById(idListe);
-        var liEtu = document.createElement("li");
-        var liTxt = document.createTextNode(d['Votre prénom']+' '+d['Votre nom']+' ('+d['Votre compte GitHub']+')');
-        //var liTxt = document.createTextNode(d['URL vers la cartographie ?']+' = '+d['Qualité esthétique de la cartographie ?']);
-        liEtu.appendChild(liTxt);
+         console.log("récupère le csv");
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRdI6Jqxh2T2AteSmf_yh_PPkxo6WYD7el-CfgwNfoxRzz4N1pK8tO7idHhsUKYo-fCRYDs48vFwDZ6/pub?output=csv" ;
+         //urlCSV = "Pratiques_informationnelles_liees_au _covid 19_Reponses_au_formulaire_1.csv";
+         d3.csv(urlCSV).then(function(data) {
+             console.log("csv récupéré");
+             console.log(data);
+             data.forEach(d=>{
+                 //console.log(d);
+                 ajoutLi(d,'listeEtu');
+             });
 
-        //afficher les lien vers le formulaire et la liste des réponse
-        var ulLien = document.createElement("ul");
-        var liLien = document.createElement("li");
-        var urlLien = "https://samszo.github.io/M2GSI_20-21_ProgramSystem/"+d['Votre compte GitHub'];
-        liLien.innerHTML = '<a href="'+urlLien+'/formulaire.html'+'" >lien vers le formulaire</a>';
-        ulLien.appendChild(liLien);
-        liLien = document.createElement("li");
-        liLien.innerHTML = '<a href="'+urlLien+'/liste-formulaire.html'+'" >lien vers les réponses</a>';
-        ulLien.appendChild(liLien);
-        liEtu.appendChild(ulLien);            
+         });
+         console.log("Fait autre chose");
 
-        /*afficher toute les propriété d'un objet
+
+     function ajoutLi(d, idListe) {
+         var ul = document.getElementById(idListe);
+         var liEtu = document.createElement("li");
+         //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
+         var liTxt = document.createTextNode(d['Horodateur']);
+         liEtu.appendChild(liTxt);
+
+        ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            var liProp = document.createElement("li");
-            var PropTxt = document.createTextNode(d[property]);
-            liProp.appendChild(PropTxt);
-            ulProp.appendChild(liProp);
+            if(property=='Connaissez-vous les outils de cartographies de controverse? '
+               || property=="Pourquoi utilisez-vous les cartographies de controverse?"
+                || property=="Quel outil utilisez-vous le plus ?"
+                || property=="A quel fréquence utilisez-vous les cartographies de controverse?"
+               || property=="Niveau de connaissances des outils de cartographies de controverse?"
+               || property=="Connaissez-vous d'autres outils de cartographie de controverse?"
+               || property=="Comment décrivez-vous les cartographies de controverse ?"
+               || property=="Quel est l'intérêt de la catographie des controverses?"
+            ){
+                var liProp = document.createElement("li");
+                var PropTxt = document.createTextNode(property+' = '+d[property]);
+                liProp.appendChild(PropTxt);
+                ulProp.appendChild(liProp);
+            }
         }
         liEtu.appendChild(ulProp);            
-        */
+
+
+
+         if(d.besoins){
+            var ulBesoin = document.createElement("ul");
+            d.besoins.forEach(b=>{
+                var liBesoin = document.createElement("li");
+                var besoinTxt = document.createTextNode(b);
+                liBesoin.appendChild(besoinTxt);
+                ulBesoin.appendChild(liBesoin);
+            })
+            liEtu.appendChild(ulBesoin);            
+        }
         ul.appendChild(liEtu);
     }
-
     console.log('FIN');
     </script>
 </body>
