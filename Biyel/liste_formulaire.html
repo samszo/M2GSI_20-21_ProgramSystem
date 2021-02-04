@@ -62,13 +62,13 @@
         var ulProp = document.createElement("ul");
         for (const property in d) {
             if(property=='âge?'
-               || property=="Qu'avez-vous pensé de l'organisation de l'événement d'aujourd'hui ?"
-                || property=="Les contenus étaient-ils pertinents et utiles pour votre travail ?"
-                || property=="Quelles nouvelles choses ou nouveaux concepts avez-vous appris ?"
+               || property=="Qu'avez-vous pensé de l'organisation de l'événement d'aujourd'hui?"
+                || property=="Les contenus étaient-ils pertinents et utiles pour votre travail?"
+                || property=="Quelles nouvelles choses ou nouveaux concepts avez-vous appris?"
                || property=="Qu’avez-vous pensé des contenus proposés ?"
-               || property=="Qu'avez-vous apprécié dans le choix de nos intervenants ?"
-               || property=="Selon vous, quelles étaient les sessions les plus pertinentes ?"
-               || property=="Dans quelle mesure êtes-vous satisfait du contenu des sessions ?"
+               || property=="Qu'avez-vous apprécié dans le choix de nos intervenants?"
+               || property=="Selon vous, quelles étaient les sessions les plus pertinentes?"
+               || property=="Dans quelle mesure êtes-vous satisfait du contenu des sessions?"
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
