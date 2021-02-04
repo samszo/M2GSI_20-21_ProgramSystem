@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>réponse des participants</title>
+    <title>Liste des formulaires</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
 
 <body>  
-    <h1>réponse des participants</h1>
+    <h1>Liste des formulaires étudiants</h1>
     <ul id="listeEtu">
     </ul>
     <ul id='listeBesoins' >
@@ -37,8 +37,8 @@
 
 
          console.log("récupère le csv");
-         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS_34RQi24ogWl-TxAg8flTPiAA5KiM9UXYJhHL_OHQmJWbsywvu1-2jmWiWZOStuUg9uAx2muMJGZF/pub?output=csv" ;
-         //urlCSV = "Votre avis sur cet événement";
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS_34RQi24ogWl-TxAg8flTPiAA5KiM9UXYJhHL_OHQmJWbsywvu1-2jmWiWZOStuUg9uAx2muMJGZF/pub?gid=2014993061&single=true&output=csv" ;
+         //urlCSV = "Votre_avis_sur_cet_événement_Reponses_au_formulaire_1.csv";
          d3.csv(urlCSV).then(function(data) {
              console.log("csv récupéré");
              console.log(data);
@@ -55,15 +55,20 @@
          var ul = document.getElementById(idListe);
          var liEtu = document.createElement("li");
          //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
-         var liTxt = document.createTextNode(d['Nom Prénom']);
+         var liTxt = document.createTextNode(d['Horodateur']);
          liEtu.appendChild(liTxt);
 
         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=="Âge"
-                || property=="Qu'avez-vous pensé de l'organisation de l'événement d'aujourd'hui ?" 
+            if(property=='Quel est votre genre? '
+               || property=="Qu'avez-vous pensé de l'organisation de l'événement d'aujourd'hui ?"
+                || property=="Les contenus étaient-ils pertinents et utiles pour votre travail ?"
                 || property=="Quelles nouvelles choses ou nouveaux concepts avez-vous appris ?"
+               || property=="Qu’avez-vous pensé des contenus proposés ?"
+               || property=="Qu'avez-vous apprécié dans le choix de nos intervenants ?"
+               || property=="Selon vous, quelles étaient les sessions les plus pertinentes ?"
+               || property=="Dans quelle mesure êtes-vous satisfait du contenu des sessions ?"
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
