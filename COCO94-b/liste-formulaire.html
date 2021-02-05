@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des formulaires</title>
-    <script src=" https://d3js.org/d3.v6.min.js "></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
+
 <body>  
-
     <h1>Liste des formulaires étudiants</h1>
-
     <ul id="listeEtu">
     </ul>
-
     <ul id='listeBesoins' >
     </ul> 
     
@@ -26,58 +24,80 @@
             ,{'nom':'toto','github':'totoot'}
             ,{'nom':'Machin truc chouette','github':'totoot'}
         ];
-        //écrire la liste dans la console
-        console.log(listeEtudiants);
+         //écrire la liste dans la console
+         console.log(listeEtudiants);
 
-        /*boucler sur les élément de la liste
-        listeEtudiants.forEach(d=>{
-            //console.log(d);
-            ajoutLi(d,'listeEtu');
-        });
-        */
-
-
-        console.log("récupère le csv");
-        let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQRsRnZoGNJoBN5jlaG3B79y9U6-c_94s05ArF2axcyAwSxJHctWfWuymBztyDK4RbXWfMEd547QdNs/pub?gid=1726448233&single=true&output=csv" ;
-        //urlCSV = "Evaluation _des _cartographies_ de_ controverses _réponses";
-    
-       d3.csv(urlCSV).then(function(data) {
-            console.log("csv récupéré");
-            console.log(data);
-            data.forEach(d=>{
-                //console.log(d);
-                ajoutLi(d,'listeEtu');
-            });
-
-        });
-        console.log("Fait autre chose");
+         //boucler sur les élément de la liste
+         /*boucler sur les élément de la liste
+         listeEtudiants.forEach(d=>{
+             //console.log(d);
+             ajoutLi(d,'listeEtu');
+         });
+         */
 
 
-    function ajoutLi(d, idListe) {
-        var ul = document.getElementById(idListe);
-        var liEtu = document.createElement("li");
-        var liTxt = document.createTextNode(d['Nom']+' '+d['Prénom']+' ('+d['Numéro étudiant']+')'+d['Age']);
-        //var liTxt = document.createTextNode(d['URL vers la cartographie ?']+' = '+d['Qualité esthétique de la cartographie ?']);=
-        +d['Prise en main des outils étudiés']+d['Compréhension générale du cours']+d['Difficultées rencontrées']+d['Suggestions']
-        liEtu.appendChild(liTxt);
+         console.log("récupère le csv");
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTej8dgD5v8OTBFhyR5SRp2J4KklEqtiiMCAt2eriI6LAlJULpm6FC5jjioU8xvFXjeqkURasa-tjoq/pub?gid=1606057090&single=true&output=csv" ;
+         //urlCSV = "Evaluation_des_cartographies_de_ controverses_réponses_Reponses_au_formulaire_1.csv";
+         d3.csv(urlCSV).then(function(data) {
+             console.log("csv récupéré");
+             console.log(data);
+             data.forEach(d=>{
+                 //console.log(d);
+                 ajoutLi(d,'listeEtu');
+             });
 
+         });
+         console.log("Fait autre chose");
+
+
+     function ajoutLi(d, idListe) {
+         var ul = document.getElementById(idListe);
+         var liEtu = document.createElement("li");
+         //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
+         var liTxt = document.createTextNode(d['Horodateur']);
+         liEtu.appendChild(liTxt);
+
+        ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            var liProp = document.createElement("li");
-            var PropTxt = document.createTextNode(d[property]);
-            liProp.appendChild(PropTxt);
-            ulProp.appendChild(liProp);
+            if(property=='Horodateur'
+               || property=="Nom"
+                || property=="Prénom"
+               || property=="Numéro étudiant"
+               || property=="Combien de temps dure le master GSI"
+               || property=="Age"
+               || property=="Qualité de la cartographie"
+               || property=="URL vers la cartographie"
+               || property=="Prise en main des outils étudiés"
+               || property=="Compréhension générale du cours"
+               || property=="Difficultés rencontrées"
+               || property=="Suggestions"
+               
+               
+            ){
+                var liProp = document.createElement("li");
+                var PropTxt = document.createTextNode(property+' = '+d[property]);
+                liProp.appendChild(PropTxt);
+                ulProp.appendChild(liProp);
+            }
         }
         liEtu.appendChild(ulProp);            
+
+
+
+         if(d.besoins){
+            var ulBesoin = document.createElement("ul");
+            d.besoins.forEach(b=>{
+                var liBesoin = document.createElement("li");
+                var besoinTxt = document.createTextNode(b);
+                liBesoin.appendChild(besoinTxt);
+                ulBesoin.appendChild(liBesoin);
+            })
+            liEtu.appendChild(ulBesoin);            
+        }
         ul.appendChild(liEtu);
     }
-    /// afficher quelques réponses du formulaire
-            var  ulProp  =  document . createElement ( "ul" ) ;
-            for  ( propriété const  en d ) {   
-                if ( property == 'Numéro étudiant'
-                    ||  property == "Compréhension générale du cours"
-                    ||  property == "Prise en main des outils étudiés"
-                ) {
     console.log('FIN');
     </script>
 </body>
