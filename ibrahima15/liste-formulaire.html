@@ -37,8 +37,8 @@
 
 
          console.log("récupère le csv");
-         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR4StUbdnp5RGYgrIqva905OZEgsRfRhjpxSeXF_Lt9tcLyEKypujT-ElFXVGbdTBqdZ6hfbeMUqHki/pub?gid=468070184&single=true&output=csv" ;
-         //urlCSV = "Etude_sur_la_collecte_des_informations_liée_au_covid_pour_les_étudiants_Reponses_au_formulaire_1.csv";
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR4StUbdnp5RGYgrIqva905OZEgsRfRhjpxSeXF_Lt9tcLyEKypujT-ElFXVGbdTBqdZ6hfbeMUqHki/pub?output=csv" ;
+         //urlCSV = "Etude_sur_la_collecte_des_informations_liée_au_covid_pour_les_étudiants_formulaire_1.csv";
          d3.csv(urlCSV).then(function(data) {
              console.log("csv récupéré");
              console.log(data);
@@ -61,9 +61,14 @@
         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=='Votre Nom et Prenom ?'
-                || property=="Quelles sont les sources que vous utilisez lorsque vous cherchez de l’information concernant le covid ?"
-                || property=="A quelle fréquence d'utilisation ?"
+            if(property=='1) Votre Nom et Prénom'
+               || property=="2) Quelles sont les sources que vous utilisez lorsque vous cherchez de l’information concernant le covid?"
+                || property=="3)A quelle fréquence d'utilisation?"
+                || property=="4) Comment évaluez vous les informations recueillies sur vos différentes sources?"
+               || property=="5) Quelles sont vos catégories de sources?"
+               || property=="6)Quelles sont vos critères de sélection des sources d'information?"
+               || property=="7) Utilisez vous un ordinateur ou un smartphone pour recueillir des données ?"
+               || property=="8) la qualité de votre réseau est elle bonne"
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
