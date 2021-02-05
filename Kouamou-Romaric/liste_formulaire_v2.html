@@ -62,15 +62,15 @@
         var ulProp = document.createElement("ul");
         for (const property in d) {
             if(property=='1 Êtes-vous membre de Paris 8 ?'
-               || property=="2 Dans quel parcours êtes-vous inscris ?"
-               || property=="3 Nom"
-               || property=="4 Prénom"
-               || property=="5 Numéro étudiant"
-               || property=="6 Sexe"
-               || property=="7 Quel est votre tranche d'âge ?"
-               || property=="8 Précédente formation"
-               || property=="9 Cochez les outils que vous connaissez"
-               || property=="10 Cochez le(s) stage(s) recherché(s)"
+               || property=='2 Dans quel parcours êtes-vous inscris ?'
+               || property=='3 Nom'
+               || property=='4 Prénom'
+               || property=='5 Numéro étudiant'
+               || property=='6 Sexe'
+               || property=='7 Quel est votre tranche d'âge ?'
+               || property=='8 Précédente formation'
+               || property=='9 Cochez les outils que vous connaissez'
+               || property=='10 Cochez le(s) stage(s) recherché(s)'
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
