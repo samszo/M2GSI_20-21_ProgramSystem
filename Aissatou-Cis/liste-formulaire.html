@@ -37,8 +37,8 @@
 
 
          console.log("récupère le csv");
-         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTDH-d3GRyvY3P5OhK6WyfDPRTiUyxwMiH2sGqbEDAOIWbHZdkES3a-jb4C5n7s4EI39teZzUVgQvAg/pub?gid=607852403&single=true&output=csv" ;
-         //urlCSV = "Formation_en_humanités_numériques_1.csv";
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTDH-d3GRyvY3P5OhK6WyfDPRTiUyxwMiH2sGqbEDAOIWbHZdkES3a-jb4C5n7s4EI39teZzUVgQvAg/pub?output=csv" ;
+         //urlCSV = "Formation_en_humanités_numériques_réponses_au_formulaire_1.csv";
          d3.csv(urlCSV).then(function(data) {
              console.log("csv récupéré");
              console.log(data);
@@ -61,11 +61,14 @@
         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=='Donnez votre définition par rapport aux humanités numériques'
-               || property=="Votre discipline"
-               || property=="Votre secteur d'option"
+            if(property=='Design'
+               || property=="Donnez votre définition par rapport aux humanités numériques"
+                || property=="Votre discipline"
+                || property=="Votre secteur d'option"
                || property=="Votre option tend vers quels Débouchés"
-               
+               || property=="Quel est la langue de votre Institut d'étude"
+               || property=="Quels est votre niveau d'étude"
+               || property=="Dans quelle ville se trouve votre établissement"
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
