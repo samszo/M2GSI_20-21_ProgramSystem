@@ -26,6 +26,34 @@
         ];
          //écrire la liste dans la console
          console.log(listeEtudiants);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des formulaires</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+
+<body>
+    <h1>Liste des formulaires étudiants</h1>
+    <ul id="listeEtu">
+    </ul>
+    <ul id='listeBesoins' >
+    </ul>
+
+
+    <script>
+        console.log("DEBUT");
+        //création de la liste des étudiants
+        let listeEtudiants=[
+            {'nom':'titi',"github":'Aissatou-Cis','besoins':['html','javascript']}
+            ,{'nom':'tata','github':'tat','besoins':['html','css']}
+            ,{'nom':'toto','github':'totoot'}
+            ,{'nom':'Machin truc chouette','github':'totoot'}
+        ];
+         //écrire la liste dans la console
+         console.log(listeEtudiants);
 
          //boucler sur les élément de la liste
          /*boucler sur les élément de la liste
@@ -61,9 +89,10 @@
         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=='Donnez votre définition par rapport aux humanités numériques?'
-                || property=="Dans quelle ville se trouve votre établissement?"
-                || property=="Quels outils numériques utilisez-vous: plusieurs choix possibles?"
+            if(property=="Vous étes?"
+                 || property=="Donnez votre définition par rapport aux humanités numériques?"
+                || property=="Votre discipline?"
+                || property=="Votre secteur d'option?"
                 
                 
             ) {
