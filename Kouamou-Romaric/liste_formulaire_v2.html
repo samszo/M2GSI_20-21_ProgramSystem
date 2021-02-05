@@ -6,17 +6,15 @@
     <title>Liste des formulaires</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
-<body>
 
+<body>  
     <h1>Liste des formulaires étudiants</h1>
-
     <ul id="listeEtu">
     </ul>
-
     <ul id='listeBesoins' >
-    </ul>
-
-
+    </ul> 
+    
+    
     <script>
         console.log("DEBUT");
         //création de la liste des étudiants
@@ -26,47 +24,65 @@
             ,{'nom':'toto','github':'totoot'}
             ,{'nom':'Machin truc chouette','github':'totoot'}
         ];
-        //écrire la liste dans la console
-        console.log(listeEtudiants);
+         //écrire la liste dans la console
+         console.log(listeEtudiants);
 
-        /*boucler sur les élément de la liste
-        listeEtudiants.forEach(d=>{
-            //console.log(d);
-            ajoutLi(d,'listeEtu');
-        });
-        */
-
-
-        console.log("récupère le csv");
-        let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRZi68iXH2SpR7ndeZDRstfLYDosC6mFJi_ctyUzDN7fXrvg373ZB_x4OZI9OufpCWMHoc2OIksUtxt/pub?gid=1383394702&single=true&output=csv" ;
-        //urlCSV = "notesM2GSI.csv";
-        d3.csv(urlCSV).then(function(data) {
-            console.log("csv récupéré");
-            console.log(data);
-            data.forEach(d=>{
-                //console.log(d);
-                ajoutLi(d,'listeEtu');
-            });
-
-        });
-        console.log("Fait autre chose");
+         //boucler sur les élément de la liste
+         /*boucler sur les élément de la liste
+         listeEtudiants.forEach(d=>{
+             //console.log(d);
+             ajoutLi(d,'listeEtu');
+         });
+         */
 
 
+         console.log("récupère le csv");
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRZi68iXH2SpR7ndeZDRstfLYDosC6mFJi_ctyUzDN7fXrvg373ZB_x4OZI9OufpCWMHoc2OIksUtxt/pub?gid=1383394702&single=true&output=csv" ;
+         //urlCSV = "Pratiques_informationnelles_liees_au _covid 19_Reponses_au_formulaire_1.csv";
+         d3.csv(urlCSV).then(function(data) {
+             console.log("csv récupéré");
+             console.log(data);
+             data.forEach(d=>{
+                 //console.log(d);
+                 ajoutLi(d,'listeEtu');
+             });
+
+         });
+         console.log("Fait autre chose");
+
+
+     function ajoutLi(d, idListe) {
+         var ul = document.getElementById(idListe);
+         var liEtu = document.createElement("li");
+         //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
+         var liTxt = document.createTextNode(d['Horodateur']);
+         liEtu.appendChild(liTxt);
+
+        ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
             if(property=='1 Êtes-vous membre de Paris 8 ?'
-                || property=='2 Dans quel parcours êtes-vous inscris ?'
-                || property=='3 Nom'
-                || property=='4 Prénom'
-                || property=='5 Numéro étudiant'
-                || property=='6 Sexe'
-                || property=="7 Quel est votre tranche d'âge ?"
-                || property=='8 Précédente formation'
-                || property=='9 Cochez les outils que vous connaissez'
-                || property=="10 Cochez le's' stage's' recherché's'"
+               || property=="2 Dans quel parcours êtes-vous inscris ?"
+                || property=="3 Nom"
+                || property=="4 Prénom"
+               || property=="5 Numéro étudiant"
+               || property=="6 Sexe"
+               || property=="7 Quel est votre tranche d'âge ?"
+               || property=="8 Précédente formation"
+               || property=="9 Cochez les outils que vous connaissez"
+               || property=="10 Cochez le(s) stage(s) recherché(s)"
             ){
+                var liProp = document.createElement("li");
+                var PropTxt = document.createTextNode(property+' = '+d[property]);
+                liProp.appendChild(PropTxt);
+                ulProp.appendChild(liProp);
+            }
+        }
+        liEtu.appendChild(ulProp);            
 
-        if(d.besoins){
+
+
+         if(d.besoins){
             var ulBesoin = document.createElement("ul");
             d.besoins.forEach(b=>{
                 var liBesoin = document.createElement("li");
@@ -74,12 +90,10 @@
                 liBesoin.appendChild(besoinTxt);
                 ulBesoin.appendChild(liBesoin);
             })
-            liEtu.appendChild(ulBesoin);
+            liEtu.appendChild(ulBesoin);            
         }
-
         ul.appendChild(liEtu);
     }
-
     console.log('FIN');
     </script>
 </body>
