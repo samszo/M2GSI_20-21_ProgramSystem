@@ -61,14 +61,16 @@
         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=='la duré de stage en M2? '
-               || property=="Que pensez du master en GSI?"
-                || property=="Donnez un secteur d'activité que les diplomés en Gsi peuvent travailler ?"
-                || property=="Combien de temps dure le master GSI?"
-               || property=="pouvez nous donnez le nombre de cours en M2 en GSI?"
-               || property=="l'enseignement à distance est- il accepté?"
-               || property=="y'a t'il un nombre limité pour les étudiants en GSI  ?"
-               || property=="Donnez le nom du responsable du master GSI?"
+            if(property=='Horodateur'
+               || property=="la duré de stage en M2"
+                || property=="Que pensez du master en GSI"
+               || property=="Donnez un secteur d'activité que les diplomés en Gsi peuvent travailler?"
+               || property=="Combien de temps dure le master GSI"
+               || property=="l'enseignement à distance est- il accepté"
+               || property=="y'a t'il un nombre limité pour les étudiants en GSI"
+               || property=="Donnez le nom du responsable du master GSI"
+               || property=="la formation gsi est elle rigoureuse "
+               || property=="Adresse e-mail"
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
