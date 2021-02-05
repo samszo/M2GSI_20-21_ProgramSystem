@@ -61,9 +61,17 @@
         ///afficher quelques réponse du formulaire
         var ulProp = document.createElement("ul");
         for (const property in d) {
-            if(property=='Quelle est votre situation matrimoniale? '
+            if(property=='vous êtes?? '
+                || property=="Quelle est votre situation matrimoniale?"
+                || property=="Quelle est votre profession?"
+                || property=="Résidez-vous en France?"
                 || property=="Vos sources d'information pendant la crise sanitaire liée au COVID19?"
                 || property=="A quel moment de la journée consultez-vous ces sources informationnelles?"
+                || property=="Comment jugez-vous ces sources informationnelles?"
+                || property=="Etes-vous satisfait de ces informations?"
+                || property=="Sur quels critères choisissez vous vos sources d'informations?"
+                || property=="La crise sanitaire liée au COVID19 a-t-elle influencé votre horizon informationnelle?"
+                || property=="Suggeriez-vous ces sources à d'autres personnes?"
             ){
                 var liProp = document.createElement("li");
                 var PropTxt = document.createTextNode(property+' = '+d[property]);
