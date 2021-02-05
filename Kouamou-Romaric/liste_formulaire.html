@@ -1,75 +1,100 @@
 <!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <title>Listes des formulaires</title>
-  </head>
-  <body>
-<h1> Listes des formulaires etudiants </h1>
-<ul id='listeDesEtudiants'>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des formulaires</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
 
-   <li>etudiant 1 Aissatou-Cis </li>
-   <li>etudiant 2 Alexia971 </li>
-   <li>etudiant 3 COCO94-b <li>
-   <li>etudiant 4 KalelGuerni <li>
-   <li>etudiant 5 M639148<li>
-   <li>etudiant 6 Noralli<li>
-   <li>etudiant 7 YasmineNouar<li>
-   <li>etudiant 8 babelhead<li>
-   <li>etudiant 9 coumba999<li>
-   <li>etudiant 10 diasek</li>
-   <li>etudiant 11 ibrahima15</li>
-   <li>etudiant 12 jane</li>
-   <li>etudiant 13 samb1212</li>
-   <li>etudiant 14 sndong-git</li>
-   
+<body>  
+    <h1>Liste des formulaires étudiants</h1>
+    <ul id="listeEtu">
     </ul>
-   <script>
-      console.log("DEBUT");
-	  
-	   let listeEtudiants=[
-	   
-	   console.log(listeEtudiants);
-	   
-	   {'nom':'titi',"github":'Aissatou-Cis','besoins':['html','javascript']}
-	   {'nom':'tata','github':'tat','besoin':['html','css']}
-	   {'nom':'toto','github':'totoot'}	   
-	    {'nom':'machin truc chouette','github':'totoot'}	
-	   ];
-	  
-	   console.log(listeEtudiants);
-	   
-	    listeEtudiants.forEach(d=>{
-		console.log(d);
-		
-		ajoutLi(d.nom+' ('d.github+')'),'listeEtudiants');
-		
-				function ajoutLi(txtLi),(idlisteDesEtudiants) {
-		var ul = document.getElementbyId("listeDesEtudiants");
-		var liEtudiants = document.createElement("li");
-		var liEtudiants = document.createElement("li");
-		appendChild(document.createTextNode("liTxt"));
-		liEtudiants.appendChild(liTxt);
-		
-		if (d.besoin){
-		d.besoins.forEach(b=>{
-		ajoutLi('besoin 1','listeBesoins');
-		  });
-		
-		}
-		function ajoutLi(txtLi),(idlisteDesEtudiants) {
-		var ul = document.getElementbyId("listeDesEtudiants");
-		var liBesoin = document.createElement("li");
-		var besoinTxt = document.createTextNode(b);
-		appendChild(document.createTextNode("liTxt"));
-		liEtudiants.appendChild(liTxt);
-		ul.appendChild(liEtudiants);
-		}
-		ajoutLi('listeBesoins')
+    <ul id='listeBesoins' >
+    </ul> 
+    
+    
+    <script>
+        console.log("DEBUT");
+        //création de la liste des étudiants
+        let listeEtudiants=[
+            {'nom':'titi',"github":'Aissatou-Cis','besoins':['html','javascript']}
+            ,{'nom':'tata','github':'tat','besoins':['html','css']}
+            ,{'nom':'toto','github':'totoot'}
+            ,{'nom':'Machin truc chouette','github':'totoot'}
+        ];
+         //écrire la liste dans la console
+         console.log(listeEtudiants);
 
-	  console.log('FIN');
-   </script>
-  
-  </body>
+         //boucler sur les élément de la liste
+         /*boucler sur les élément de la liste
+         listeEtudiants.forEach(d=>{
+             //console.log(d);
+             ajoutLi(d,'listeEtu');
+         });
+         */
+
+
+         console.log("récupère le csv");
+         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRZi68iXH2SpR7ndeZDRstfLYDosC6mFJi_ctyUzDN7fXrvg373ZB_x4OZI9OufpCWMHoc2OIksUtxt/pub?gid=1383394702&single=true&output=csv" ;
+         //urlCSV = "Formulaire Kouamou-Romaric_Reponses_au_formulaire_1.csv";
+         d3.csv(urlCSV).then(function(data) {
+             console.log("csv récupéré");
+             console.log(data);
+             data.forEach(d=>{
+                 //console.log(d);
+                 ajoutLi(d,'listeEtu');
+             });
+
+         });
+         console.log("Fait autre chose");
+
+
+     function ajoutLi(d, idListe) {
+         var ul = document.getElementById(idListe);
+         var liEtu = document.createElement("li");
+         //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
+         var liTxt = document.createTextNode(d['Horodateur']);
+         liEtu.appendChild(liTxt);
+
+        ///afficher quelques réponse du formulaire
+        var ulProp = document.createElement("ul");
+        for (const property in d) {
+            if(property=='1 Êtes-vous membre de Paris 8 ?'
+               || property=='2 Dans quel parcours êtes-vous inscris ?'
+               || property=='3 Nom'
+               || property=='4 Prénom'
+               || property=='5 Numéro étudiant'
+               || property=='6 Sexe'
+               || property=="7 Quel est votre tranche d'âge ?"
+               || property=='8 Précédente formation'
+               || property=='9 Cochez les outils que vous connaissez'
+               || property=='10 Cochez le(s) stage(s) recherché(s)'
+            ){
+                var liProp = document.createElement("li");
+                var PropTxt = document.createTextNode(property+' = '+d[property]);
+                liProp.appendChild(PropTxt);
+                ulProp.appendChild(liProp);
+            }
+        }
+        liEtu.appendChild(ulProp);            
+
+
+
+         if(d.besoins){
+            var ulBesoin = document.createElement("ul");
+            d.besoins.forEach(b=>{
+                var liBesoin = document.createElement("li");
+                var besoinTxt = document.createTextNode(b);
+                liBesoin.appendChild(besoinTxt);
+                ulBesoin.appendChild(liBesoin);
+            })
+            liEtu.appendChild(ulBesoin);            
+        }
+        ul.appendChild(liEtu);
+    }
+    console.log('FIN');
+    </script>
+</body>
 </html>
-© 2021 GitHub, Inc.
