@@ -1,98 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des formulaires</title>
-    <script src="https://d3js.org/d3.v6.min.js"></script>
-</head>
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Liste des formulaires</title>
+	    <script src="https://d3js.org/d3.v6.min.js"></script>
+	</head>
+	
 
-<body>  
-    <h1>Liste des formulaires étudiants</h1>
-    <ul id="listeEtu">
-    </ul>
-    <ul id='listeBesoins' >
-    </ul> 
-    
-    
-    <script>
-        console.log("DEBUT");
-        //création de la liste des étudiants
-        let listeEtudiants=[
-            {'nom':'titi',"github":'Aissatou-Cis','besoins':['html','javascript']}
-            ,{'nom':'tata','github':'tat','besoins':['html','css']}
-            ,{'nom':'toto','github':'totoot'}
-            ,{'nom':'Machin truc chouette','github':'totoot'}
-        ];
-         //écrire la liste dans la console
-         console.log(listeEtudiants);
+	<body>  
+	    <h1>Liste des formulaires étudiants</h1>
+	    <ul id="listeEtu">
+	    </ul>
+	    <ul id='listeBesoins' >
+	    </ul> 
+	    
+	    
+	    <script>
+	        console.log("DEBUT");
+	        //création de la liste des étudiants
+	        let listeEtudiants=[
+	            {'nom':'titi',"github":'Aissatou-Cis','besoins':['html','javascript']}
+	            ,{'nom':'tata','github':'tat','besoins':['html','css']}
+	            ,{'nom':'toto','github':'totoot'}
+	            ,{'nom':'Machin truc chouette','github':'totoot'}
+	        ];
+	         //écrire la liste dans la console
+	         console.log(listeEtudiants);
+	
 
-         //boucler sur les élément de la liste
-         /*boucler sur les élément de la liste
-         listeEtudiants.forEach(d=>{
-             //console.log(d);
-             ajoutLi(d,'listeEtu');
-         });
-         */
+	         //boucler sur les élément de la liste
+	         /*boucler sur les élément de la liste
+	         listeEtudiants.forEach(d=>{
+	             //console.log(d);
+	             ajoutLi(d,'listeEtu');
+	         });
+	         */
+	
 
+	
 
-         console.log("récupère le csv");
-         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS_34RQi24ogWl-TxAg8flTPiAA5KiM9UXYJhHL_OHQmJWbsywvu1-2jmWiWZOStuUg9uAx2muMJGZF/pub?gid=2014993061&single=true&output=csv" ;
-         //urlCSV = "Votre_avis_sur_cet_événement_Reponses_au_formulaire_1.csv";
-         d3.csv(urlCSV).then(function(data) {
-             console.log("csv récupéré");
-             console.log(data);
-             data.forEach(d=>{
-                 //console.log(d);
-                 ajoutLi(d,'listeEtu');
-             });
+	         console.log("récupère le csv");
+	         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS_34RQi24ogWl-TxAg8flTPiAA5KiM9UXYJhHL_OHQmJWbsywvu1-2jmWiWZOStuUg9uAx2muMJGZF/pub?gid=2014993061&single=true&output=csv" ;
+	         //urlCSV = "Pratiques_informationnelles_liees_au _covid 19_Reponses_au_formulaire_1.csv";
+	         d3.csv(urlCSV).then(function(data) {
+	             console.log("csv récupéré");
+	             console.log(data);
+	             data.forEach(d=>{
+	                 //console.log(d);
+	                 ajoutLi(d,'listeEtu');
+	             });
+	
 
-         });
-         console.log("Fait autre chose");
+	         });
+	         console.log("Fait autre chose");
+	
 
+	
 
-     function ajoutLi(d, idListe) {
-         var ul = document.getElementById(idListe);
-         var liEtu = document.createElement("li");
-         //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
-         var liTxt = document.createTextNode(d['Horodateur']);
-         liEtu.appendChild(liTxt);
+	     function ajoutLi(d, idListe) {
+	         var ul = document.getElementById(idListe);
+	         var liEtu = document.createElement("li");
+	         //var liTxt = document.createTextNode(d.nom+' ('+d.github+')');
+	         var liTxt = document.createTextNode(d['Horodateur']);
+	         liEtu.appendChild(liTxt);
+	
 
-        ///afficher quelques réponse du formulaire
-        var ulProp = document.createElement("ul");
-        for (const property in d) {
-            if(property=='âge?'
-               || property=="Qu'avez-vous pensé de l'organisation de l'événement d'aujourd'hui?"
-                || property=="Les contenus étaient-ils pertinents et utiles pour votre travail?"
-                || property=="Quelles nouvelles choses ou nouveaux concepts avez-vous appris?"
-               || property=="Qu’avez-vous pensé des contenus proposés ?"
-               || property=="Qu'avez-vous apprécié dans le choix de nos intervenants?"
-               || property=="Selon vous, quelles étaient les sessions les plus pertinentes?"
-               || property=="Dans quelle mesure êtes-vous satisfait du contenu des sessions?"
-            ){
-                var liProp = document.createElement("li");
-                var PropTxt = document.createTextNode(property+' = '+d[property]);
-                liProp.appendChild(PropTxt);
-                ulProp.appendChild(liProp);
-            }
-        }
-        liEtu.appendChild(ulProp);            
+	        ///afficher quelques réponse du formulaire
+	        var ulProp = document.createElement("ul");
+	        for (const property in d) {
+	            if(property=='âge?'
+	               || property=="Qu'avez-vous pensé de l'organisation de l'événement d'aujourd'hui ?"
+	                || property=="Les contenus étaient-ils pertinents et utiles pour votre travail ?"
+	                || property=="Quelles nouvelles choses ou nouveaux concepts avez-vous appris ?"
+	               || property=="Qu’avez-vous pensé des contenus proposés ?"
+	               || property=="Qu'avez-vous apprécié dans le choix de nos intervenants ?"
+	               || property=="Selon vous, quelles étaient les sessions les plus pertinentes ?"
+	               || property=="Dans quelle mesure êtes-vous satisfait du contenu des sessions ?"
+	            ){
+	                var liProp = document.createElement("li");
+	                var PropTxt = document.createTextNode(property+' = '+d[property]);
+	                liProp.appendChild(PropTxt);
+	                ulProp.appendChild(liProp);
+	            }
+	        }
+	        liEtu.appendChild(ulProp);            
+	
 
+	
 
+	
 
-         if(d.besoins){
-            var ulBesoin = document.createElement("ul");
-            d.besoins.forEach(b=>{
-                var liBesoin = document.createElement("li");
-                var besoinTxt = document.createTextNode(b);
-                liBesoin.appendChild(besoinTxt);
-                ulBesoin.appendChild(liBesoin);
-            })
-            liEtu.appendChild(ulBesoin);            
-        }
-        ul.appendChild(liEtu);
-    }
-    console.log('FIN');
-    </script>
-</body>
-</html>
+	         if(d.besoins){
+	            var ulBesoin = document.createElement("ul");
+	            d.besoins.forEach(b=>{
+	                var liBesoin = document.createElement("li");
+	                var besoinTxt = document.createTextNode(b);
+	                liBesoin.appendChild(besoinTxt);
+	                ulBesoin.appendChild(liBesoin);
+	            })
+	            liEtu.appendChild(ulBesoin);            
+	        }
+	        ul.appendChild(liEtu);
+	    }
+	    console.log('FIN');
+	    </script>
+	</body>
+	</html>
