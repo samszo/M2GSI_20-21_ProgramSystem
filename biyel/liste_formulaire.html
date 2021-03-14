@@ -41,7 +41,7 @@
 	
 
 	         console.log("récupère le csv");
-	         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS_34RQi24ogWl-TxAg8flTPiAA5KiM9UXYJhHL_OHQmJWbsywvu1-2jmWiWZOStuUg9uAx2muMJGZF/pub?gid=2014993061&single=true&output=csv" ;
+	         let urlCSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRYpY9wr59EbyW3aIeO8VgOmviBJvBHlv43WbA9_udakbw3x2wjnm9erkXIr0KPKvagqT6dcAQg5z3m/pub?gid=424816384&single=true&output=csv" ;
 	         //urlCSV = "Pratiques_informationnelles_liees_au _covid 19_Reponses_au_formulaire_1.csv";
 	         d3.csv(urlCSV).then(function(data) {
 	             console.log("csv récupéré");
@@ -69,14 +69,12 @@
 	        ///afficher quelques réponse du formulaire
 	        var ulProp = document.createElement("ul");
 	        for (const property in d) {
-	            if(property=='âge?'
-	               || property=="Qu'avez-vous pensé de l'organisation de l'événement d'aujourd'hui ?"
-	                || property=="Les contenus étaient-ils pertinents et utiles pour votre travail ?"
-	                || property=="Quelles nouvelles choses ou nouveaux concepts avez-vous appris ?"
-	               || property=="Qu’avez-vous pensé des contenus proposés ?"
-	               || property=="Qu'avez-vous apprécié dans le choix de nos intervenants ?"
-	               || property=="Selon vous, quelles étaient les sessions les plus pertinentes ?"
-	               || property=="Dans quelle mesure êtes-vous satisfait du contenu des sessions ?"
+	            if(property=='Quel est votre nom ?'
+	               || property=="Serez-vous présent ?"
+	                || property=="Combien serez-vous ?"
+	                || property=="Que comptez-vous apporter ?"
+	               || property=="Avez-vous des allergies alimentaires ou un régime particulier à suivre ?"
+	               || property=="Quelle est votre adresse e-mail ?"
 	            ){
 	                var liProp = document.createElement("li");
 	                var PropTxt = document.createTextNode(property+' = '+d[property]);
@@ -107,4 +105,3 @@
 	    </script>
 	</body>
 	</html>
-
